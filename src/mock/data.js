@@ -2,26 +2,29 @@ import { nanoid } from 'nanoid';
 
 // HEAD DATA
 export const headData = {
-  title: '', // e.g: 'Name | Developer'
-  lang: '', // e.g: en, es, fr, jp
-  description: '', // e.g: Welcome to my website
+  title: 'Luke Taylor | Web & App developer',
+  lang: 'en',
+  description: 'Welcome to my site, get to know me.',
 };
 
 // HERO DATA
 export const heroData = {
-  title: '',
-  name: '',
-  subtitle: '',
-  cta: '',
+  title: "Hey 🤘, my name's",
+  name: 'Luke Taylor',
+  subtitle: "I'm a web & app developer \nbased out of Derby, UK 🇬🇧",
+  cta: 'Get to know me',
 };
 
 // ABOUT DATA
 export const aboutData = {
   img: 'profile.jpg',
-  paragraphOne: '',
-  paragraphTwo: '',
-  paragraphThree: '',
-  resume: 'https://www.resumemaker.online/es.php', // if no resume, the button will not show up
+  title: 'Get to know me',
+  paragraphOne:
+    "I've been a developer with many titles for around 10 years, working with various modern tech stacks. For the past 6 years, my main focus has been towards mobile apps, using native languages like Swift/Obj-C, Kotlin/Java, JavaScript/React-Native.",
+  paragraphTwo:
+    "I've developed apps in various industries such as games, utilities, health & wellbeing, and more. I enjoy the challenge of finding the right solutions to enhance the user experience as well as playing with different tools to achieve this outcome.",
+  paragraphThree:
+    "When I'm not working you'll find me climbing walls like a spider monkey, changing my kids nappies, bingeing the latest series with my wife or either being destroyed by children on some new FPS or relaxing with a sci-fi novel (Ready Player One or Dune).",
 };
 
 // PROJECTS DATA
@@ -57,9 +60,10 @@ export const projectsData = [
 
 // CONTACT DATA
 export const contactData = {
-  cta: '',
-  btn: '',
-  email: '',
+  title: 'Get in touch',
+  cta: 'Feel free to reach out for any work',
+  btn: 'Email me',
+  email: 'lmcjt@outlook.com',
 };
 
 // FOOTER DATA
@@ -68,27 +72,17 @@ export const footerData = {
     {
       id: nanoid(),
       name: 'twitter',
-      url: '',
-    },
-    {
-      id: nanoid(),
-      name: 'codepen',
-      url: '',
+      url: 'https://twitter.com/lmcjt',
     },
     {
       id: nanoid(),
       name: 'linkedin',
-      url: '',
+      url: 'https://www.linkedin.com/in/lukemalcolmtaylor/',
     },
     {
       id: nanoid(),
       name: 'github',
-      url: '',
+      url: 'https://github.com/lmcjt37',
     },
   ],
-};
-
-// Github start/fork buttons
-export const githubButtons = {
-  isEnabled: true, // set to false to disable the GitHub stars/fork buttons
 };
