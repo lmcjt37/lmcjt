@@ -31,30 +31,23 @@ export const aboutData = {
 export const projectsData = [
   {
     id: nanoid(),
-    img: 'project.jpg',
-    title: '',
-    info: '',
-    info2: '',
-    url: '',
-    repo: 'https://github.com/cobidev/react-simplefolio', // if no repo, the button will not show up
+    img: 'elf.jpg',
+    title: 'Elf at work',
+    info: 'Lead mobile developer for a project aimed at bringing health and wellbeing to users within businesses.',
+    info2:
+      "Built using React Native, AWS and Firebase, it's a white label, cross platform (iOS & Android), digital solution that can be rolled out to employees with ease Globally",
+    url: 'https://elfatwork.com/',
+    // repo: 'https://github.com/cobidev/react-simplefolio', // if no repo, the button will not show up
   },
   {
     id: nanoid(),
-    img: 'project.jpg',
-    title: '',
-    info: '',
-    info2: '',
-    url: '',
-    repo: 'https://github.com/cobidev/react-simplefolio', // if no repo, the button will not show up
-  },
-  {
-    id: nanoid(),
-    img: 'project.jpg',
-    title: '',
-    info: '',
-    info2: '',
-    url: '',
-    repo: 'https://github.com/cobidev/react-simplefolio', // if no repo, the button will not show up
+    img: 'l3.jpg',
+    title: 'L3 Digital',
+    info: 'Co-Director of L3 Digital, a digital agency specialising in all aspects of the digital platform from websites, to mobile apps, to supporting back end services.',
+    info2:
+      'The team has a wealth of knowledge and experience to help deliver whatever your business requires and is adaptable to meet the needs by using whatever tooling is necessary.',
+    url: 'https://l3digital.co.uk/',
+    // repo: 'https://github.com/cobidev/react-simplefolio', // if no repo, the button will not show up
   },
 ];
 
