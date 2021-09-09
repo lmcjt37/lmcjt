@@ -45,6 +45,9 @@ jobs:
       - image: circleci/node:latest
     steps:
       - checkout
+      - add_ssh_keys:
+          fingerprints:
+            - '94:3a:36:a7:42:98:fd:ee:f0:27:4a:6e:06:e0:f3:ec'
       - restore_cache:
           keys:
             - v1-dependencies-{{ checksum "yarn.lock" }}
