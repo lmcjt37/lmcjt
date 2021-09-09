@@ -11,14 +11,14 @@ jobs:
             - v1-dependencies-
       - run:
           name: Install dependencies
-          command: npm install
+          command: yarn
       - save_cache:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "yarn.lock" }}
       - run:
           name: Run linting
-          command: npm run lint
+          command: yarn lint
 
   test:
     docker:
@@ -31,14 +31,14 @@ jobs:
             - v1-dependencies-
       - run:
           name: Install dependencies
-          command: npm install
+          command: yarn
       - save_cache:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "yarn.lock" }}
       - run:
           name: Run tests
-          command: npm run test::CI
+          command: yarn test
 
   build_and_deploy:
     docker:
@@ -55,13 +55,13 @@ jobs:
             git config --global user.email $GH_EMAIL
             git config --global user.name $GH_NAME
 
-            npm run build
+            yarn build
 
             mkdir build/.circleci
 
             cp -a .circleci/. build/.circleci
 
-            npm run deploy
+            yarn deploy
 
             echo "Finished deploying to Github Pages!"
 
