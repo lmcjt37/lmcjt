@@ -1,24 +1,44 @@
-import React from 'react';
-import { Helmet } from 'react-helmet';
-import App from '../components/App';
+import React, { useState, useEffect } from 'react';
 
-import { headData } from '../mock/data';
+import Header from '../components/Header/Header';
+import Hero from '../components/Hero/Hero';
+import About from '../components/About/About';
+import Projects from '../components/Projects/Projects';
+import Contact from '../components/Contact/Contact';
+import Footer from '../components/Footer/Footer';
+
+import { PortfolioProvider } from '../context/portfolio';
+
+import { heroData, aboutData, projectsData, contactData, footerData } from '../mock/data';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../style/main.scss';
 
 const Index = () => {
-  const { title, lang, description } = headData;
+  const [hero, setHero] = useState({});
+  const [about, setAbout] = useState({});
+  const [projects, setProjects] = useState([]);
+  const [contact, setContact] = useState({});
+  const [footer, setFooter] = useState({});
+
+  useEffect(() => {
+    setHero({ ...heroData });
+    setAbout({ ...aboutData });
+    setProjects([...projectsData]);
+    setContact({ ...contactData });
+    setFooter({ ...footerData });
+  }, []);
 
   return (
     <>
-      <Helmet>
-        <meta charSet="utf-8" />
-        <title>{title || 'Gatsby Simplefolio'}</title>
-        <html lang={lang || 'en'} />
-        <meta name="description" content={description || 'Gatsby Simplefolio'} />
-      </Helmet>
-      <App />
+      <Header />
+      <PortfolioProvider value={{ hero, about, projects, contact, footer }}>
+        <Hero />
+        <About />
+        <Projects />
+        <Contact />
+        <Footer />
+      </PortfolioProvider>
     </>
   );
 };

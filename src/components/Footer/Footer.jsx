@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Container } from 'react-bootstrap';
 import { Link } from 'react-scroll';
-import PortfolioContext from '../../context/context';
+import PortfolioContext from '../../context/portfolio';
 
 const Footer = () => {
   const { footer } = useContext(PortfolioContext);

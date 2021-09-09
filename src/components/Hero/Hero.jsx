@@ -2,7 +2,7 @@ import React, { useContext, useState, useEffect } from 'react';
 import { Container } from 'react-bootstrap';
 import Fade from 'react-reveal/Fade';
 import { Link } from 'react-scroll';
-import PortfolioContext from '../../context/context';
+import PortfolioContext from '../../context/portfolio';
 
 const Header = () => {
   const { hero } = useContext(PortfolioContext);

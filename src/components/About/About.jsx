@@ -3,11 +3,11 @@ import Fade from 'react-reveal/Fade';
 import { Container, Row, Col } from 'react-bootstrap';
 import Title from '../Title/Title';
 import AboutImg from '../Image/AboutImg';
-import PortfolioContext from '../../context/context';
+import PortfolioContext from '../../context/portfolio';
 
 const About = () => {
   const { about } = useContext(PortfolioContext);
-  const { img, title, paragraphOne, paragraphTwo, paragraphThree } = about;
+  const { img, title, paragraphOne, paragraphTwo, paragraphThree, btn } = about;
 
   const [isDesktop, setIsDesktop] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
@@ -40,6 +40,15 @@ const About = () => {
                 <p className="about-wrapper__info-text">{paragraphOne}</p>
                 <p className="about-wrapper__info-text">{paragraphTwo}</p>
                 <p className="about-wrapper__info-text">{paragraphThree}</p>
+
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="cta-btn cta-btn--info"
+                  href="/about"
+                >
+                  {btn}
+                </a>
               </div>
             </Fade>
           </Col>

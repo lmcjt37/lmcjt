@@ -7,3 +7,7 @@
 .load-hidden {
   visibility: hidden;
 }
+
+.mask {
+  mask-image: url(../../../src/images/blob.svg);
+}
