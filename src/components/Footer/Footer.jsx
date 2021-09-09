@@ -27,9 +27,7 @@ const Footer = () => {
             })}
         </div>
         <hr />
-        <p className="footer__text">
-          © {new Date().getFullYear()} Luke Taylor - Powered by caffiene ☕️
-        </p>
+        <p className="footer__text">Powered by caffiene ☕️ - Made by Luke Taylor</p>
       </Container>
     </footer>
   );

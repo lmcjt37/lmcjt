@@ -33,11 +33,10 @@ export const projectsData = [
     id: nanoid(),
     img: 'elf.jpg',
     title: 'Elf at work',
-    info: 'Lead mobile developer for a project aimed at bringing health and wellbeing to users within businesses.',
+    info: 'Contract Lead mobile developer for a project aimed at bringing health and wellbeing to users within businesses.',
     info2:
-      "Built using React Native, AWS and Firebase, it's a white label, cross platform (iOS & Android), digital solution that can be rolled out to employees with ease Globally",
+      'Built using React Native, AWS and Firebase. It is a white label, cross platform (iOS & Android), digital solution that can be rolled out to employees with ease globally. Main features of the app included; recipes, workouts, and wellbeing exercises.',
     url: 'https://elfatwork.com/',
-    // repo: 'https://github.com/cobidev/react-simplefolio', // if no repo, the button will not show up
   },
   {
     id: nanoid(),
@@ -47,14 +46,23 @@ export const projectsData = [
     info2:
       'The team has a wealth of knowledge and experience to help deliver whatever your business requires and is adaptable to meet the needs by using whatever tooling is necessary.',
     url: 'https://l3digital.co.uk/',
-    // repo: 'https://github.com/cobidev/react-simplefolio', // if no repo, the button will not show up
+  },
+  {
+    id: nanoid(),
+    img: 'curated.jpg',
+    title: 'Curated TV and Film',
+    info: 'This was a side project created for the purposes of Hacktoberfest (2018) where the idea was to create a list of top picks from iconic moments in Film or TV. It is updated each year for Hacktoberfest to help engage with the open source community whilst helping others.',
+    info2:
+      "It started out as a simple vanilla JS app, which with contributions from contributors it has grown to use create react app for the boilerplate, themed with Material UI, and has tests and linting to help run through the CI pipeline which pushes to the GitHub page when PR's are merged.",
+    url: 'https://lmcjt37.github.io/curated-tv-and-film/',
+    repo: 'https://github.com/lmcjt37/curated-tv-and-film',
   },
 ];
 
 // CONTACT DATA
 export const contactData = {
   title: 'Get in touch',
-  cta: 'Feel free to reach out for any work',
+  cta: 'Feel free to reach out for any work via email 📨 or my Twitter which can be found at the bottom.',
   btn: 'Email me',
   email: 'lmcjt@outlook.com',
 };
@@ -76,6 +84,16 @@ export const footerData = {
       id: nanoid(),
       name: 'github',
       url: 'https://github.com/lmcjt37',
+    },
+    {
+      id: nanoid(),
+      name: 'instagram',
+      url: 'https://www.instagram.com/lmcjt/',
+    },
+    {
+      id: nanoid(),
+      name: 'spotify',
+      url: 'https://open.spotify.com/user/lukey_taylor',
     },
   ],
 };
