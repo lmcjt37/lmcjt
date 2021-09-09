@@ -47,7 +47,7 @@ jobs:
       - checkout
       - add_ssh_keys:
           fingerprints:
-            - '94:3a:36:a7:42:98:fd:ee:f0:27:4a:6e:06:e0:f3:ec'
+            - '23:7e:aa:e2:a3:2c:a3:ea:ba:cb:8c:fe:36:62:fb:11'
       - restore_cache:
           keys:
             - v1-dependencies-{{ checksum "yarn.lock" }}
