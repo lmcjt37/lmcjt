@@ -67,13 +67,17 @@ workflows:
       - lint:
           filters:
             branches:
-              ignore: gh-pages
+              ignore:
+                - gh-pages
+                - main
       - test:
           requires:
             - lint
           filters:
             branches:
-              ignore: gh-pages
+              ignore:
+                - gh-pages
+                - main
       - build_and_deploy:
           requires:
             - test
