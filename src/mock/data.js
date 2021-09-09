@@ -62,7 +62,7 @@ export const projectsData = [
 // CONTACT DATA
 export const contactData = {
   title: 'Get in touch',
-  cta: 'Feel free to reach out for any work via email 📨 or my Twitter which can be found at the bottom.',
+  cta: 'Feel free to reach out for any work via email 📨 \nor my Twitter which can be found at the bottom.',
   btn: 'Email me',
   email: 'lmcjt@outlook.com',
 };

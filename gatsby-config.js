@@ -22,11 +22,11 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Simplefolio`,
-        short_name: `Simplefolio`,
+        name: `Luke Taylor | Web & App developer`,
+        short_name: `Luke Taylor | developer`,
         start_url: `/`,
         background_color: `#fff`,
-        theme_color: `#02aab0`,
+        theme_color: `#8e2de2`,
         display: `standalone`,
         icon: 'src/images/favicon.png',
       },
