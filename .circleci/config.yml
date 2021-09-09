@@ -51,17 +51,7 @@ jobs:
             - v1-dependencies-
       - run:
           name: Build and deploy to gh-pages
-          command: |
-            git config --global user.email $GH_EMAIL
-            git config --global user.name $GH_NAME
-
-            mkdir build/.circleci
-
-            cp -a .circleci/. build/.circleci
-
-            yarn deploy
-
-            echo "Finished deploying to Github Pages!"
+          command: yarn deploy
 
 workflows:
   version: 2
