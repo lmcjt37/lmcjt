@@ -37,7 +37,7 @@ const BlobImage = ({ filename }) => (
             clipRule="evenodd"
             strokeLinejoin="round"
             width="400"
-            height="auto"
+            height="400"
           >
             <clipPath id="mask">
               <path
@@ -62,5 +62,5 @@ const BlobImage = ({ filename }) => (
 export default BlobImage;
 
 BlobImage.propTypes = {
-  filename: PropTypes.string.isRequired,
+  filename: PropTypes.string,
 };
