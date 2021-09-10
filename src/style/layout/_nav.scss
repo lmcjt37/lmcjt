@@ -1,0 +1,18 @@
+.nav {
+  padding: 2rem 0;
+  flex-direction: row;
+  align-content: space-between;
+
+  &__item {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+}
+
+.nav-static-top {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+}

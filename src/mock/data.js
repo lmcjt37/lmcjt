@@ -21,11 +21,9 @@ export const aboutData = {
   title: 'Get to know me',
   btn: 'Want a little more?',
   paragraphOne:
-    "I've been a developer with many titles for around 10 years, working with various modern tech stacks. For the past 6 years, my main focus has been towards mobile apps, using native languages like Swift/Obj-C, Kotlin/Java, JavaScript/React-Native.",
+    "I've been a developer with many titles for around 10 years, working with various modern tech stacks. For the past 6 years my main focus has been towards mobile apps using JavaScript, React Native and other native languages.",
   paragraphTwo:
-    "I've developed apps in various industries such as games, utilities, health & wellbeing, and more. I enjoy the challenge of finding the right solutions to enhance the user experience as well as playing with different tools to achieve this outcome.",
-  paragraphThree:
-    "When I'm not working you'll find me climbing walls like a spider monkey, changing my kids nappies, bingeing the latest series with my wife or either being destroyed by children on some new FPS or relaxing with a sci-fi novel (Ready Player One or Dune).",
+    "I've developed websites and mobile apps in various industries such as; games, utilities, health & wellbeing, and more. I enjoy the challenge of finding the right solutions to enhance the user experience, as well as playing with different tools to achieve each outcome.",
 };
 
 // PROJECTS DATA
@@ -102,10 +100,9 @@ export const footerData = {
 // ABOUT PAGE DATA
 export const aboutPageData = {
   img: 'profile.jpg',
-  title: 'Get to know me',
-  btn: 'Want a little more?',
+  title: 'Hey 🤘, Luke Taylor here',
   paragraphOne:
-    "I've been a developer with many titles for around 10 years, working with various modern tech stacks. For the past 6 years, my main focus has been towards mobile apps, using native languages like Swift/Obj-C, Kotlin/Java, JavaScript/React-Native.",
+    "I'm a developer from Derby in the UK 🇬🇧 and I've been making websites and mobile apps for around 10 years now.\n\nMy main language is JavaScript, so I use whatever the latest tech stack is surrounding that ecosystem. Currently I'm focusing on React and React Native, with all tools and frameworks available to those",
   paragraphTwo:
     "I've developed apps in various industries such as games, utilities, health & wellbeing, and more. I enjoy the challenge of finding the right solutions to enhance the user experience as well as playing with different tools to achieve this outcome.",
   paragraphThree:

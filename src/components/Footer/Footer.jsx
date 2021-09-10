@@ -1,10 +1,10 @@
 import React, { useContext } from 'react';
 import { Container } from 'react-bootstrap';
 import { Link } from 'react-scroll';
-import PortfolioContext from '../../context/portfolio';
+import DataContext from '../../context/data';
 
 const Footer = () => {
-  const { footer } = useContext(PortfolioContext);
+  const { footer } = useContext(DataContext);
   const { networks } = footer;
 
   return (
@@ -27,7 +27,7 @@ const Footer = () => {
             })}
         </div>
         <hr />
-        <p className="footer__text">Powered by caffiene ☕️ - Made by Luke Taylor</p>
+        <p className="footer__text">Powered by caffiene ☕️ - Made by Me ⚡️</p>
       </Container>
     </footer>
   );

@@ -2,12 +2,12 @@ import React, { useContext, useState, useEffect } from 'react';
 import Fade from 'react-reveal/Fade';
 import { Container, Row, Col } from 'react-bootstrap';
 import Title from '../Title/Title';
-import AboutImg from '../Image/AboutImg';
-import PortfolioContext from '../../context/portfolio';
+import BlobImage from '../Image/BlobImage';
+import DataContext from '../../context/data';
 
 const About = () => {
-  const { about } = useContext(PortfolioContext);
-  const { img, title, paragraphOne, paragraphTwo, paragraphThree, btn } = about;
+  const { about } = useContext(DataContext);
+  const { img, title, paragraphOne, paragraphTwo, btn } = about;
 
   const [isDesktop, setIsDesktop] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
@@ -30,7 +30,7 @@ const About = () => {
           <Col md={6} sm={12}>
             <Fade bottom duration={1000} delay={600} distance="30px">
               <div className="about-wrapper__image">
-                <AboutImg alt="profile picture" filename={img} />
+                <BlobImage alt="profile picture" filename={img} />
               </div>
             </Fade>
           </Col>
@@ -39,14 +39,8 @@ const About = () => {
               <div className="about-wrapper__info">
                 <p className="about-wrapper__info-text">{paragraphOne}</p>
                 <p className="about-wrapper__info-text">{paragraphTwo}</p>
-                <p className="about-wrapper__info-text">{paragraphThree}</p>
 
-                <a
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="cta-btn cta-btn--info"
-                  href="/about"
-                >
+                <a className="cta-btn cta-btn--info" href="/about">
                   {btn}
                 </a>
               </div>

@@ -1,6 +1,4 @@
-# Portfolio for Luke taylor
-
-[https://lmcjt37.github.io/lmcjt/](https://lmcjt37.github.io/lmcjt/)
+# Portfolio for Luke taylor [https://lmcjt.dev](https://lmcjt.dev)
 
 ## Technologies used 🛠️
 
@@ -9,7 +7,7 @@
 - [React](https://es.reactjs.org/) - Front-End JavaScript library
 - [Bootstrap 4](https://getbootstrap.com/docs/4.3/getting-started/introduction/) - Front-End UI library
 - [Sass](https://sass-lang.com/documentation) - CSS extension language
-- [UI Gradient](https://uigradients.com/#BrightVault)
+- [UI Gradient](https://uigradients.com/#BrightVault) - Used for colour sampling
 
 ## License 📄
 
@@ -17,4 +15,4 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments 🎁
 
-- **Jacobo Martinez** - [https://github.com/cobidev](https://github.com/cobidev)
+- **Jacobo Martinez** - [https://github.com/cobidev](https://github.com/cobidev) - Who built the starter template used [https://www.gatsbyjs.com/starters/cobidev/gatsby-simplefolio/](https://www.gatsbyjs.com/starters/cobidev/gatsby-simplefolio/)

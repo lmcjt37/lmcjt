@@ -1,5 +1,4 @@
 module.exports = {
-  pathPrefix: '/lmcjt',
   plugins: [
     `gatsby-plugin-sass`,
     `gatsby-plugin-react-helmet`,

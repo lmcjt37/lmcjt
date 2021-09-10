@@ -7,7 +7,7 @@ import Projects from '../components/Projects/Projects';
 import Contact from '../components/Contact/Contact';
 import Footer from '../components/Footer/Footer';
 
-import { PortfolioProvider } from '../context/portfolio';
+import { DataProvider } from '../context/data';
 
 import { heroData, aboutData, projectsData, contactData, footerData } from '../mock/data';
 
@@ -32,13 +32,13 @@ const Index = () => {
   return (
     <>
       <Header />
-      <PortfolioProvider value={{ hero, about, projects, contact, footer }}>
+      <DataProvider value={{ hero, about, projects, contact, footer }}>
         <Hero />
         <About />
         <Projects />
         <Contact />
         <Footer />
-      </PortfolioProvider>
+      </DataProvider>
     </>
   );
 };
