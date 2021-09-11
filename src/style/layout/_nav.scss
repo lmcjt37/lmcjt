@@ -6,6 +6,10 @@ $animate: all 0.5s ease-in-out;
   .container {
     display: flex;
     justify-content: flex-end;
+
+    @include respond(phone) {
+      justify-content: center;
+    }
   }
 
   &__item {

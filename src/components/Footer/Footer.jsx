@@ -21,7 +21,7 @@ const Footer = () => {
               const { id, name, url } = network;
               return (
                 <a key={id} href={url} rel="noopener noreferrer" target="_blank" aria-label={name}>
-                  <i className={`fa fa-${name || 'refresh'} fa-inverse`} />
+                  <i className={`fa fa-${name || 'refresh'} fa-inverse ${name}`} />
                 </a>
               );
             })}

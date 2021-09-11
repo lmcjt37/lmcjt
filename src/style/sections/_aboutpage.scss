@@ -69,10 +69,15 @@
     -webkit-clip-path: none;
   }
 
+  @include respond(phone) {
+    padding: 0rem $default-font-size;
+  }
+
   .about-page-wrapper {
     margin-top: 3.2rem;
+
     @include respond(phone) {
-      padding-bottom: 5rem;
+      padding: 5rem 0;
     }
 
     &__image {

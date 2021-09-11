@@ -5,14 +5,14 @@
   "version": "0.1.0",
   "license": "MIT",
   "scripts": {
-    "build": "gatsby build",
+    "build": "gatsby build --prefix-paths",
     "dev": "gatsby develop",
     "lint": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "yarn dev",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
-    "deploy": "gatsby build --prefix-paths && gh-pages -d public -b gh-pages"
+    "deploy": "gh-pages -d public -b gh-pages"
   },
   "dependencies": {
     "bootstrap": "^4.5.0",
