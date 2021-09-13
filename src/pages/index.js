@@ -37,7 +37,7 @@ const Index = () => {
         <About />
         <Projects />
         <Contact />
-        <Footer />
+        <Footer to="hero" />
       </DataProvider>
     </>
   );

@@ -98,7 +98,7 @@ const Projects = () => {
                             easing: 'cubic-bezier(.03,.98,.52,.99)',
                           }}
                         >
-                          <div data-tilt className="thumbnail rounded">
+                          <div data-tilt className="thumbnail">
                             <ProjectImg alt={title} filename={img} />
                           </div>
                         </Tilt>

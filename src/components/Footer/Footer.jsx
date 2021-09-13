@@ -1,9 +1,11 @@
 import React, { useContext } from 'react';
+import PropTypes from 'prop-types';
 import { Container } from 'react-bootstrap';
 import { Link } from 'react-scroll';
+
 import DataContext from '../../context/data';
 
-const Footer = () => {
+const Footer = ({ to }) => {
   const { footer } = useContext(DataContext);
   const { networks } = footer;
 
@@ -11,7 +13,7 @@ const Footer = () => {
     <footer className="footer navbar-static-bottom">
       <Container>
         <span className="back-to-top">
-          <Link to="hero" smooth duration={1000}>
+          <Link to={to} smooth duration={1000}>
             <i className="fa fa-angle-up fa-2x" aria-hidden="true" />
           </Link>
         </span>
@@ -34,3 +36,7 @@ const Footer = () => {
 };
 
 export default Footer;
+
+Footer.propTypes = {
+  to: PropTypes.string.isRequired,
+};
