@@ -12,7 +12,7 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
-    "deploy": "gh-pages -d public -b gh-pages"
+    "deploy": "yarn build && gh-pages -d public -b gh-pages"
   },
   "dependencies": {
     "bootstrap": "^4.5.0",
