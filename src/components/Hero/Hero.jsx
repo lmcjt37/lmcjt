@@ -24,27 +24,37 @@ const Header = () => {
   }, []);
 
   return (
-    <section id="hero" className="jumbotron">
-      <Nav />
-      <Container>
-        <Fade left={isDesktop} bottom={isMobile} duration={1000} delay={500} distance="30px">
-          <h1 className="hero-title">
-            {title} <span className="text-color-main">{name}</span>
-            <br />
-            {subtitle}
-          </h1>
-        </Fade>
-        <Fade left={isDesktop} bottom={isMobile} duration={1000} delay={1000} distance="30px">
-          <p className="hero-cta">
-            <span className="cta-btn cta-btn--hero">
-              <Link to="about" smooth duration={1000}>
-                {cta}
-              </Link>
-            </span>
-          </p>
-        </Fade>
-      </Container>
-    </section>
+    // constrain the blobs within the container
+    <div style={{ position: 'relative', overflow: 'hidden' }}>
+      <section id="hero" className="jumbotron">
+        <Nav />
+        <Container>
+          {isDesktop && (
+            <>
+              <div className="shape-blob" />
+              <div className="shape-blob one" />
+              <div className="shape-blob two" />
+            </>
+          )}
+          <Fade left={isDesktop} bottom={isMobile} duration={1000} delay={500} distance="30px">
+            <h1 className="hero-title">
+              {title} <span className="text-color-main">{name}</span>
+              <br />
+              {subtitle}
+            </h1>
+          </Fade>
+          <Fade left={isDesktop} bottom={isMobile} duration={1000} delay={1000} distance="30px">
+            <p className="hero-cta">
+              <span className="cta-btn cta-btn--hero">
+                <Link to="about" smooth duration={1000}>
+                  {cta}
+                </Link>
+              </span>
+            </p>
+          </Fade>
+        </Container>
+      </section>
+    </div>
   );
 };
 
