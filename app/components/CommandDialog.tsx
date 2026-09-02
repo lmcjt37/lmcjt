@@ -1,4 +1,10 @@
-export function CommandDialog() {
+type CommandDialogProps = {
+  homeNav?: boolean;
+};
+
+export function CommandDialog({ homeNav = true }: CommandDialogProps) {
+  const homePrefix = homeNav ? "" : "/";
+
   return (
     <dialog className="command-dialog" id="command-dialog" aria-labelledby="command-title">
       <form method="dialog">
@@ -9,21 +15,37 @@ export function CommandDialog() {
           </button>
         </div>
         <div className="command-list">
-          <a href="#work" data-command-link>
+          <a
+            href={`${homePrefix}#work`}
+            data-command-link
+            data-transition-link={!homeNav || undefined}
+          >
             <span>01</span>Work
           </a>
-          <a href="#notes" data-command-link>
+          <a
+            href={`${homePrefix}#notes`}
+            data-command-link
+            data-transition-link={!homeNav || undefined}
+          >
             <span>02</span>Notes
           </a>
-          <a href="#shelf" data-command-link>
+          <a
+            href={`${homePrefix}#shelf`}
+            data-command-link
+            data-transition-link={!homeNav || undefined}
+          >
             <span>03</span>Shelf
           </a>
-          <a href="#contact" data-command-link>
-            <span>04</span>Contact
+          <a href="/resume/" data-command-link data-transition-link>
+            <span>04</span>Resume
           </a>
-          <button id="quiet-chaos" type="button">
-            <span>05</span>Quiet chaos
-          </button>
+          <a
+            href={`${homePrefix}#contact`}
+            data-command-link
+            data-transition-link={!homeNav || undefined}
+          >
+            <span>05</span>Contact
+          </a>
         </div>
       </form>
     </dialog>

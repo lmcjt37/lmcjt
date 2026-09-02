@@ -1,3 +1,5 @@
+import { CommandDialog } from "./CommandDialog";
+import { CommandSurfaceEffects } from "./CommandSurfaceEffects";
 import { PageTransition } from "./PageTransition";
 import { SiteFooter } from "./SiteFooter";
 import { SiteHeader } from "./SiteHeader";
@@ -15,6 +17,9 @@ export function PageChrome({
   detailPage = false,
   footerHomeActions,
 }: PageChromeProps) {
+  const showCommandSurface = commandButton || detailPage;
+  const homeNav = !detailPage;
+
   return (
     <>
       <div className="grain" aria-hidden="true" />
@@ -25,11 +30,13 @@ export function PageChrome({
       </a>
       <SiteHeader
         brandHref={detailPage ? "/" : "#hero"}
-        commandButton={commandButton}
-        homeNav={!detailPage}
+        commandButton={showCommandSurface}
+        homeNav={homeNav}
       />
       {children}
+      {showCommandSurface ? <CommandDialog homeNav={homeNav} /> : null}
       <SiteFooter homeOnlyActions={footerHomeActions} />
+      {showCommandSurface ? <CommandSurfaceEffects /> : null}
     </>
   );
 }
