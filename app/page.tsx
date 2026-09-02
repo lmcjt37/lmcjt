@@ -1,4 +1,3 @@
-import { CommandDialog } from "./components/CommandDialog";
 import { HomeEffects } from "./components/HomeEffects";
 import { HomeItemCard, WorkCard } from "./components/HomeCards";
 import { PageChrome } from "./components/PageChrome";
@@ -136,8 +135,6 @@ export default function HomePage() {
           </section>
         </section>
       </main>
-
-      <CommandDialog />
       <HomeEffects />
     </PageChrome>
   );

@@ -46,6 +46,8 @@ export function SiteHeader({
         id={commandButton ? "command-button" : undefined}
         type="button"
         aria-hidden={commandButton ? undefined : "true"}
+        aria-controls={commandButton ? "command-dialog" : undefined}
+        aria-expanded={commandButton ? "false" : undefined}
         aria-label={commandButton ? "Open command menu" : undefined}
         tabIndex={commandButton ? undefined : -1}
       >

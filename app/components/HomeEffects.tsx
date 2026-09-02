@@ -32,14 +32,12 @@ export function HomeEffects() {
   useEffect(() => {
     const heroCanvas = document.querySelector<HTMLCanvasElement>("#hero-field");
     const heroCtx = heroCanvas?.getContext("2d");
-    const commandButton = document.querySelector<HTMLButtonElement>("#command-button");
-    const commandDialog = document.querySelector<HTMLDialogElement>("#command-dialog");
     const igniteButton = document.querySelector<HTMLButtonElement>("#ignite-button");
     const sparkButton = document.querySelector<HTMLButtonElement>("#spark-button");
-    const quietChaos = document.querySelector<HTMLButtonElement>("#quiet-chaos");
     const copyEmailButton = document.querySelector<HTMLButtonElement>(".copy-email");
     const hero = document.querySelector<HTMLElement>(".hero");
     const header = document.querySelector<HTMLElement>(".site-header");
+    const isCoarsePointer = window.matchMedia("(pointer: coarse)").matches;
     const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
     if (!heroCanvas || !heroCtx || !header) {
@@ -343,28 +341,11 @@ export function HomeEffects() {
       return { link, handleClick };
     });
 
-    const handleCommandOpen = () => {
-      if (!commandDialog?.open) {
-        commandDialog?.showModal();
-      }
-    };
-    const handleCommandClose = () => commandDialog?.close();
     const handleIgnite = () => ignite();
     const handleSpark = () =>
       addTrace(Math.random() * window.innerWidth, window.innerHeight * 0.72);
-    const handleQuietChaos = () => {
-      document.body.classList.toggle("chaos");
-      commandDialog?.close();
-      ignite();
-    };
     const handleCopyEmail = (event: MouseEvent) =>
       copyEmail(event.currentTarget as HTMLButtonElement);
-    const handleKeyDown = (event: KeyboardEvent) => {
-      if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === "k") {
-        event.preventDefault();
-        handleCommandOpen();
-      }
-    };
     const handleHeroDoubleClick = () => {
       document.body.classList.toggle("chaos");
       ignite();
@@ -383,17 +364,13 @@ export function HomeEffects() {
 
     window.addEventListener("resize", resizeHeroCanvas);
     window.addEventListener("scroll", updateScroll, { passive: true });
-    document.addEventListener("pointermove", updateMouse);
-    document.addEventListener("keydown", handleKeyDown);
-    commandButton?.addEventListener("click", handleCommandOpen);
-    document.querySelectorAll("[data-command-link]").forEach((link) => {
-      link.addEventListener("click", handleCommandClose);
-    });
+    if (!isCoarsePointer) {
+      document.addEventListener("pointermove", updateMouse);
+      hero?.addEventListener("dblclick", handleHeroDoubleClick);
+    }
     igniteButton?.addEventListener("click", handleIgnite);
     sparkButton?.addEventListener("click", handleSpark);
-    quietChaos?.addEventListener("click", handleQuietChaos);
     copyEmailButton?.addEventListener("click", handleCopyEmail);
-    hero?.addEventListener("dblclick", handleHeroDoubleClick);
 
     return () => {
       window.cancelAnimationFrame(animationFrame);
@@ -402,17 +379,13 @@ export function HomeEffects() {
       revealObserver.disconnect();
       window.removeEventListener("resize", resizeHeroCanvas);
       window.removeEventListener("scroll", updateScroll);
-      document.removeEventListener("pointermove", updateMouse);
-      document.removeEventListener("keydown", handleKeyDown);
-      commandButton?.removeEventListener("click", handleCommandOpen);
-      document.querySelectorAll("[data-command-link]").forEach((link) => {
-        link.removeEventListener("click", handleCommandClose);
-      });
+      if (!isCoarsePointer) {
+        document.removeEventListener("pointermove", updateMouse);
+        hero?.removeEventListener("dblclick", handleHeroDoubleClick);
+      }
       igniteButton?.removeEventListener("click", handleIgnite);
       sparkButton?.removeEventListener("click", handleSpark);
-      quietChaos?.removeEventListener("click", handleQuietChaos);
       copyEmailButton?.removeEventListener("click", handleCopyEmail);
-      hero?.removeEventListener("dblclick", handleHeroDoubleClick);
       transitionHandlers.forEach(({ link, handleClick }) =>
         link.removeEventListener("click", handleClick),
       );
