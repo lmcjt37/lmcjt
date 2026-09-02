@@ -65,8 +65,8 @@ In the repository settings, configure Pages to use GitHub Actions as the source.
 
 Current content includes:
 
-- three featured project cards on home, with deeper project pages
-- a notes archive with the first essay, `The AI story so far...`
-- a shelf archive with curated books and links
+- Projects, a collection of various side hustles.
+- Notes, an archive of scribbles and thoughts.
+- Shelf, a list of books, links and other references.
 
 Content metadata lives in `app/data/content.ts`. Long-form project, notes, and shelf copy lives in MDX files under `app/content/`.
