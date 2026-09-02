@@ -1,8 +1,10 @@
-# lmcjt.dev
+# [lmcjt.dev](https://lmcjt.dev)
 
 Luke Taylor's personal site and portfolio.
 
-This branch migrates the portfolio to a statically exported Next.js app: one landing page, linked project pages, a notes archive, and a shelf for books and links worth sharing.
+A portal for sharing side projects, scribbles, thoughts, and opinions.
+
+Mostly my own, with my agent friends.
 
 ## Stack
 
@@ -11,7 +13,6 @@ This branch migrates the portfolio to a statically exported Next.js app: one lan
 - TypeScript
 - MDX
 - CSS
-- SVG favicon
 
 The app exports to static files for GitHub Pages.
 
