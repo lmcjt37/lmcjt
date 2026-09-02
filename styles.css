@@ -1691,10 +1691,15 @@ body.ready h1 > span:nth-child(4) {
 
   .menu-button {
     display: grid;
-    position: fixed;
+    position: absolute;
     right: 1rem;
-    top: 0.9rem;
+    top: 50%;
+    transform: translateY(-50%);
     z-index: 45;
+  }
+
+  .menu-button:hover {
+    transform: translateY(-50%) rotate(8deg);
   }
 
   .hero {
