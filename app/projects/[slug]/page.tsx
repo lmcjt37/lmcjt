@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 import { ProjectDetailPage } from "../../components/DetailPages";
+import { projectContent } from "../../content/registry";
 import { getContentBySlug, projects } from "../../data/content";
 
 type PageProps = {
@@ -40,5 +41,11 @@ export default async function ProjectPage({ params }: PageProps) {
     notFound();
   }
 
-  return <ProjectDetailPage project={project} />;
+  const content = projectContent[project.slug];
+
+  if (!content) {
+    notFound();
+  }
+
+  return <ProjectDetailPage content={content} project={project} />;
 }

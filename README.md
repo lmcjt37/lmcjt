@@ -2,42 +2,64 @@
 
 Luke Taylor's personal site and portfolio.
 
-This branch replaces the previous Gatsby site with a dependency-free static build: one landing page, linked project pages, a notes archive, and a shelf for books and links worth sharing.
+This branch migrates the portfolio to a statically exported Next.js app: one landing page, linked project pages, a notes archive, and a shelf for books and links worth sharing.
 
 ## Stack
 
-- HTML
+- Next.js App Router
+- React
+- TypeScript
+- MDX
 - CSS
-- Vanilla JavaScript
 - SVG favicon
 
-No build step is required.
+The app exports to static files for GitHub Pages.
 
 ## Structure
 
-- `index.html` - home page
+- `app/` - Next.js App Router routes, components, data, and MDX content
+- `app/content/` - MDX content modules for projects, notes, and shelf entries
+- `app/data/` - typed metadata used by home cards, archives, and slug routes
+- `public/` - static assets served by Next.js
 - `styles.css` - shared visual system, layout, colour palette, and motion
-- `script.js` - home page content data and interactive behaviour
-- `detail.js` - shared subpage behaviour and transitions
-- `projects/` - project detail pages
-- `notes/` - notes archive and articles
-- `shelf/` - shelf archive and individual book/link pages
-- `assets/` - supporting visual assets
-- `favicon.svg` - animated palette-driven favicon
+- `next.config.mjs` - static export and MDX configuration
+- `.github/workflows/deploy.yml` - GitHub Pages deployment workflow
 
 ## Local preview
 
-Open `index.html` directly in the browser, or run a local server:
+Install dependencies:
 
 ```sh
-python3 -m http.server 4173
+npm install
 ```
 
-Then visit `http://localhost:4173`.
+Run the Next.js dev server:
+
+```sh
+npm run dev
+```
+
+Then visit `http://localhost:3000`.
+
+Check types:
+
+```sh
+npm run typecheck
+```
+
+Build the static export:
+
+```sh
+npm run build
+```
+
+The static site is written to `out/`.
 
 ## Publishing
 
-This repo is set up to work as a simple static site. For GitHub Pages, publish the repository root so `index.html` is served directly.
+GitHub Pages deployment is handled by `.github/workflows/deploy.yml`.
+
+In the repository settings, configure Pages to use GitHub Actions as the source. Pushing to `main` runs `npm ci`, `npm run build`, uploads `out/`, and deploys it.
 
 ## Content notes
 
@@ -47,4 +69,4 @@ Current content includes:
 - a notes archive with the first essay, `The AI story so far...`
 - a shelf archive with curated books and links
 
-Content and card metadata live in `script.js`, while long-form copy lives in the individual HTML pages under `projects/`, `notes/`, and `shelf/`.
+Content metadata lives in `app/data/content.ts`. Long-form project, notes, and shelf copy lives in MDX files under `app/content/`.

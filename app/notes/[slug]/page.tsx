@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 import { WritingDetailPage } from "../../components/DetailPages";
+import { noteContent } from "../../content/registry";
 import { getContentBySlug, notes } from "../../data/content";
 
 type PageProps = {
@@ -40,5 +41,11 @@ export default async function NotePage({ params }: PageProps) {
     notFound();
   }
 
-  return <WritingDetailPage item={note} />;
+  const content = noteContent[note.slug];
+
+  if (!content) {
+    notFound();
+  }
+
+  return <WritingDetailPage content={content} item={note} />;
 }

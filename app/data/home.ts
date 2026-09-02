@@ -36,13 +36,13 @@ export const noteItems: HomeListItem[] = [
     type: "Placeholder",
     title: "More notes, soon",
     text: "A place for working thoughts on mobile engineering, product tradeoffs, and what holds up in practice.",
-    href: "/notes",
+    href: "/notes/",
   },
   {
     type: "Placeholder",
     title: "Still scribbling",
     text: "Short essays, sharper opinions, and the occasional useful detour will live here as the archive grows.",
-    href: "/notes",
+    href: "/notes/",
   },
 ];
 

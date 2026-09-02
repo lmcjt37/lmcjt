@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 import { WritingDetailPage } from "../../components/DetailPages";
+import { shelfContent } from "../../content/registry";
 import { getContentBySlug, shelf } from "../../data/content";
 
 type PageProps = {
@@ -40,5 +41,11 @@ export default async function ShelfDetailPage({ params }: PageProps) {
     notFound();
   }
 
-  return <WritingDetailPage item={shelfItem} />;
+  const content = shelfContent[shelfItem.slug];
+
+  if (!content) {
+    notFound();
+  }
+
+  return <WritingDetailPage content={content} item={shelfItem} />;
 }

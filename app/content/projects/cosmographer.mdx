@@ -1,0 +1,43 @@
+export const detail = {
+  headline: "A way to see a project’s domains and cross-cutting concerns.",
+  intro:
+    "Cosmographer is a way to visualise a project’s structure from the top down. It traverses a codebase, follows the path from view to function to state and back again, and turns those relationships into something you can actually inspect rather than infer from dozens of files and tabs.",
+  bullets: [
+    "Maps screens, calls, state changes, and ownership boundaries into graph data.",
+    "Renders pre-indexed datasets in a local viewer built on Cosmograph.",
+    "Uses the /cosmograph skill to generate the datapoints the viewer renders.",
+  ],
+  panels: [
+    {
+      title: "Why it matters",
+      body:
+        "I originally built it while working across iOS and Android and trying to understand exactly how a screen loaded from top to bottom. I wanted a better way to spot overlap, trace ownership, and find the parts of a system that looked heavier than they needed to be.",
+    },
+    {
+      title: "What it proves",
+      body:
+        "It shows I can build useful internal-style tools with a strong product instinct, then push them into something shareable. It also says a lot about how I use AI: quickly, deliberately, and with a human still steering every meaningful decision.",
+    },
+  ],
+  primaryLinkLabel: "Watch this space",
+  primaryLinkHref: "/#work",
+};
+
+<article className="detail-card reveal">
+  <h2>How it works</h2>
+  <p>
+    The viewer itself is intentionally small. The heavier part lives upstream in the skill and model
+    workflow that traverses a codebase, extracts datapoints, and returns a graph structure for the
+    app to render. The web app then stays focused on loading indexed points, links, config, and
+    layout data in a simple self-contained package.
+  </p>
+</article>
+
+<article className="detail-card reveal">
+  <h2>Current state</h2>
+  <p>
+    It is still an active experiment. Getting good output depended heavily on model capability,
+    context, and trial-and-error refinement, especially when working with older 4.x ChatGPT models. I
+    want to revisit it with newer frontier models and push the quality of the traversal much further.
+  </p>
+</article>

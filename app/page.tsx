@@ -90,7 +90,7 @@ export default function HomePage() {
               ))}
             </div>
             <div className="work-more">
-              <a className="scribbles-link" href="/notes" data-transition-link>
+              <a className="scribbles-link" href="/notes/" data-transition-link>
                 <span>My scribbles</span>
                 <span aria-hidden="true">→</span>
               </a>
@@ -108,7 +108,7 @@ export default function HomePage() {
               ))}
             </div>
             <div className="work-more">
-              <a className="shelf-link" href="/shelf" data-transition-link>
+              <a className="shelf-link" href="/shelf/" data-transition-link>
                 <span>My shelf</span>
                 <span aria-hidden="true">→</span>
               </a>

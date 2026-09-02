@@ -1,6 +1,6 @@
 export type ContentSection = "projects" | "notes" | "shelf";
 
-export type ContentRoute = `/${ContentSection}/${string}`;
+export type ContentRoute = `/${ContentSection}/${string}/`;
 
 export type BaseContentItem = {
   slug: string;
@@ -46,7 +46,7 @@ export const projects = [
     description:
       "Coffee Dev by Luke Taylor: an idle simulation that turns engineering activity into a gamified cafe for engagement, clarity, and better habits.",
     date: "2026-09-01",
-    route: "/projects/coffee-dev",
+    route: "/projects/coffee-dev/",
     listed: true,
     featured: true,
     proof:
@@ -64,7 +64,7 @@ export const projects = [
     description:
       "Cosmographer by Luke Taylor: a graph viewer and architecture tool for visualising domains and cross-cutting concerns in a codebase.",
     date: "2026-09-01",
-    route: "/projects/cosmographer",
+    route: "/projects/cosmographer/",
     listed: true,
     featured: true,
     proof:
@@ -82,7 +82,7 @@ export const projects = [
     description:
       "skills by Luke Taylor: a personal operating layer for AI-assisted engineering built around repeatable, evolving workflows.",
     date: "2026-09-01",
-    route: "/projects/skills",
+    route: "/projects/skills/",
     listed: true,
     featured: true,
     proof:
@@ -100,7 +100,7 @@ export const projects = [
     description:
       "Tiny Delight Studies by Luke Taylor: interaction sketches about motion, surprise, and useful product polish.",
     date: "2026-09-01",
-    route: "/projects/tiny-delight-studies",
+    route: "/projects/tiny-delight-studies/",
     listed: true,
     featured: false,
     proof: "Interaction sketches about motion, surprise, and useful product polish.",
@@ -120,7 +120,7 @@ export const notes = [
     description:
       "The AI story so far... by Luke Taylor: from skepticism to regular use, with a human-in-the-loop view of AI in engineering.",
     date: "2026-09-01",
-    route: "/notes/the-ai-story-so-far",
+    route: "/notes/the-ai-story-so-far/",
     listed: true,
     featured: true,
     type: "Essay",
@@ -136,7 +136,7 @@ export const shelf = [
     title: "Dune saga",
     description: "Dune saga, shared by Luke Taylor.",
     date: "2026-09-01",
-    route: "/shelf/dune-saga",
+    route: "/shelf/dune-saga/",
     listed: true,
     featured: true,
     type: "Book",
@@ -147,7 +147,7 @@ export const shelf = [
     title: "Ready Player One and Two",
     description: "Ready Player One and Two, shared by Luke Taylor.",
     date: "2026-09-01",
-    route: "/shelf/ready-player-one-and-two",
+    route: "/shelf/ready-player-one-and-two/",
     listed: true,
     featured: true,
     type: "Book",
@@ -158,7 +158,7 @@ export const shelf = [
     title: "The Martian",
     description: "The Martian, shared by Luke Taylor.",
     date: "2026-09-01",
-    route: "/shelf/the-martian",
+    route: "/shelf/the-martian/",
     listed: true,
     featured: true,
     type: "Book",
@@ -169,7 +169,7 @@ export const shelf = [
     title: "Project Hail Mary",
     description: "Project Hail Mary, shared by Luke Taylor.",
     date: "2026-09-01",
-    route: "/shelf/project-hail-mary",
+    route: "/shelf/project-hail-mary/",
     listed: true,
     featured: false,
     type: "Book",
@@ -180,7 +180,7 @@ export const shelf = [
     title: "Artemis",
     description: "Artemis, shared by Luke Taylor.",
     date: "2026-09-01",
-    route: "/shelf/artemis",
+    route: "/shelf/artemis/",
     listed: true,
     featured: false,
     type: "Book",
@@ -191,7 +191,7 @@ export const shelf = [
     title: "ICQR Tree",
     description: "ICQR Tree, shared by Luke Taylor.",
     date: "2026-09-01",
-    route: "/shelf/icqr-tree",
+    route: "/shelf/icqr-tree/",
     listed: true,
     featured: false,
     type: "Link",
@@ -203,7 +203,7 @@ export const shelf = [
     title: "Link Lowdown",
     description: "Link Lowdown, shared by Luke Taylor.",
     date: "2026-09-01",
-    route: "/shelf/link-lowdown",
+    route: "/shelf/link-lowdown/",
     listed: true,
     featured: false,
     type: "Link",
@@ -215,7 +215,7 @@ export const shelf = [
     title: "Little Big Details",
     description: "Little Big Details, recommended by Luke Taylor.",
     date: "2026-09-01",
-    route: "/shelf/little-big-details",
+    route: "/shelf/little-big-details/",
     listed: false,
     featured: false,
     type: "Link",
@@ -227,7 +227,7 @@ export const shelf = [
     title: "Shape Up",
     description: "Shape Up, recommended by Luke Taylor.",
     date: "2026-09-01",
-    route: "/shelf/shape-up",
+    route: "/shelf/shape-up/",
     listed: false,
     featured: false,
     type: "Book",
@@ -240,7 +240,7 @@ export const shelf = [
     description:
       "The Design of Everyday Things, recommended by Luke Taylor for product sense, usability, and design thinking.",
     date: "2026-09-01",
-    route: "/shelf/the-design-of-everyday-things",
+    route: "/shelf/the-design-of-everyday-things/",
     listed: false,
     featured: false,
     type: "Book",
