@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { startTransition, useEffect, useState } from "react";
 
 import { allContent, getListedContent, type ContentItem } from "../data/content";
 
@@ -10,7 +10,9 @@ export function NotFoundDetour() {
   const [item, setItem] = useState<ContentItem>(detours[0]);
 
   useEffect(() => {
-    setItem(detours[Math.floor(Math.random() * detours.length)]);
+    startTransition(() => {
+      setItem(detours[Math.floor(Math.random() * detours.length)]);
+    });
   }, []);
 
   const sectionLabel =
