@@ -81,7 +81,10 @@ export default function HomePage() {
 
           <section className="notes-shelf reveal" id="notes">
             <div className="section-title">
-              <p className="label">02 / Notes</p>
+              <a className="label section-title-link" href="/notes/" data-transition-link>
+                <span>02 / Notes</span>
+                <span aria-hidden="true">→</span>
+              </a>
               <h2>Writing space for the thinking behind the work.</h2>
             </div>
             <div className="note-list" id="note-list">
@@ -89,29 +92,20 @@ export default function HomePage() {
                 <HomeItemCard item={item} key={item.title} />
               ))}
             </div>
-            <div className="work-more">
-              <a className="scribbles-link" href="/notes/" data-transition-link>
-                <span>My scribbles</span>
-                <span aria-hidden="true">→</span>
-              </a>
-            </div>
           </section>
 
           <section className="notes-shelf reveal" id="shelf">
             <div className="section-title">
-              <p className="label">03 / Shelf</p>
+              <a className="label section-title-link section-title-link--shelf" href="/shelf/" data-transition-link>
+                <span>03 / Shelf</span>
+                <span aria-hidden="true">→</span>
+              </a>
               <h2>Things I would share across the table.</h2>
             </div>
             <div className="shelf-list" id="shelf-list">
               {shelfItems.slice(0, 3).map((item) => (
                 <HomeItemCard item={item} key={item.href} />
               ))}
-            </div>
-            <div className="work-more">
-              <a className="shelf-link" href="/shelf/" data-transition-link>
-                <span>My shelf</span>
-                <span aria-hidden="true">→</span>
-              </a>
             </div>
           </section>
 
