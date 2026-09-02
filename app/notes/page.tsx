@@ -5,7 +5,8 @@ import { notes } from "../data/content";
 
 export const metadata: Metadata = {
   title: "Notes - Luke Taylor",
-  description: "Notes by Luke Taylor: essays and working thoughts on AI, mobile engineering, product, and craft.",
+  description:
+    "Notes by Luke Taylor: essays and working thoughts on AI, mobile engineering, product, and craft.",
 };
 
 export default function NotesPage() {

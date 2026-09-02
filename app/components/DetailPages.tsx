@@ -1,4 +1,10 @@
-import { getContentBySlug, projects, type NoteItem, type ProjectItem, type ShelfItem } from "../data/content";
+import {
+  getContentBySlug,
+  projects,
+  type NoteItem,
+  type ProjectItem,
+  type ShelfItem,
+} from "../data/content";
 import type { ProjectContentModule, WritingContentModule } from "../content/types";
 import { DetailEffects } from "./DetailEffects";
 import { PageChrome } from "./PageChrome";
@@ -73,7 +79,13 @@ export function ProjectDetailPage({ content, project }: ProjectDetailPageProps) 
   );
 }
 
-export function WritingDetailPage({ content, item }: { content: WritingContentModule; item: NoteItem | ShelfItem }) {
+export function WritingDetailPage({
+  content,
+  item,
+}: {
+  content: WritingContentModule;
+  item: NoteItem | ShelfItem;
+}) {
   const isNote = item.section === "notes";
   const Content = content.default;
 

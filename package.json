@@ -5,6 +5,10 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "format": "oxfmt .",
+    "format:check": "oxfmt --check .",
+    "lint": "oxlint --react-plugin --nextjs-plugin --jsx-a11y-plugin --allow no-html-link-for-pages --max-warnings=0 .",
+    "lint:fix": "oxlint --react-plugin --nextjs-plugin --jsx-a11y-plugin --allow no-html-link-for-pages --fix .",
     "postbuild": "touch out/.nojekyll",
     "start": "next start",
     "typecheck": "tsc --noEmit"
@@ -22,6 +26,8 @@
     "@types/node": "26.4.1",
     "@types/react": "19.2.18",
     "@types/react-dom": "19.2.5",
+    "oxfmt": "^0.66.0",
+    "oxlint": "^1.81.0",
     "typescript": "7.0.2"
   }
 }

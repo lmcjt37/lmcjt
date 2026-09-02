@@ -4,12 +4,21 @@ type SiteHeaderProps = {
   homeNav?: boolean;
 };
 
-export function SiteHeader({ brandHref = "#hero", commandButton = false, homeNav = true }: SiteHeaderProps) {
+export function SiteHeader({
+  brandHref = "#hero",
+  commandButton = false,
+  homeNav = true,
+}: SiteHeaderProps) {
   const homePrefix = homeNav ? "" : "/";
 
   return (
     <header className="site-header">
-      <a className="brand" href={brandHref} aria-label="Luke Taylor home" data-transition-link={!homeNav || undefined}>
+      <a
+        className="brand"
+        href={brandHref}
+        aria-label="Luke Taylor home"
+        data-transition-link={!homeNav || undefined}
+      >
         <span className="brand-text">
           <strong className="brand-full">Luke Taylor</strong>
           <strong className="brand-short">Luke Taylor</strong>

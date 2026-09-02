@@ -28,7 +28,11 @@ export function HomeItemCard({ item }: { item: HomeListItem }) {
   const placeholderClass = item.type === "Placeholder" ? " item-card--placeholder" : "";
 
   return (
-    <a className={`item-card reveal tile-link${placeholderClass}`} href={item.href} data-transition-link>
+    <a
+      className={`item-card reveal tile-link${placeholderClass}`}
+      href={item.href}
+      data-transition-link
+    >
       <span>{item.type}</span>
       <h3>{item.title}</h3>
       <p>{item.text}</p>

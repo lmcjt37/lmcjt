@@ -9,7 +9,12 @@ type PageChromeProps = {
   footerHomeActions?: boolean;
 };
 
-export function PageChrome({ children, commandButton, detailPage = false, footerHomeActions }: PageChromeProps) {
+export function PageChrome({
+  children,
+  commandButton,
+  detailPage = false,
+  footerHomeActions,
+}: PageChromeProps) {
   return (
     <>
       <div className="grain" aria-hidden="true" />
@@ -18,7 +23,11 @@ export function PageChrome({ children, commandButton, detailPage = false, footer
       <a className="skip-link" href="#main">
         Skip to content
       </a>
-      <SiteHeader brandHref={detailPage ? "/" : "#hero"} commandButton={commandButton} homeNav={!detailPage} />
+      <SiteHeader
+        brandHref={detailPage ? "/" : "#hero"}
+        commandButton={commandButton}
+        homeNav={!detailPage}
+      />
       {children}
       <SiteFooter homeOnlyActions={footerHomeActions} />
     </>

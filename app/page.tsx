@@ -72,7 +72,12 @@ export default function HomePage() {
               ))}
             </div>
             <div className="work-more">
-              <a className="work-more-link" href="https://github.com/lmcjt37" target="_blank" rel="noreferrer">
+              <a
+                className="work-more-link"
+                href="https://github.com/lmcjt37"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <span>Other work</span>
                 <span aria-hidden="true">→</span>
               </a>
@@ -96,7 +101,11 @@ export default function HomePage() {
 
           <section className="notes-shelf reveal" id="shelf">
             <div className="section-title">
-              <a className="label section-title-link section-title-link--shelf" href="/shelf/" data-transition-link>
+              <a
+                className="label section-title-link section-title-link--shelf"
+                href="/shelf/"
+                data-transition-link
+              >
                 <span>03 / Shelf</span>
                 <span aria-hidden="true">→</span>
               </a>

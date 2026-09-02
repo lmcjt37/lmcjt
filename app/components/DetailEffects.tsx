@@ -74,48 +74,57 @@ export function DetailEffects() {
           { rootMargin: "0px 0px -12% 0px", threshold: 0.08 },
         );
 
-    revealObserver && document.querySelectorAll(".reveal").forEach((element) => revealObserver.observe(element));
+    if (revealObserver) {
+      document.querySelectorAll(".reveal").forEach((element) => revealObserver.observe(element));
+    }
 
-    const transitionHandlers = Array.from(document.querySelectorAll<HTMLAnchorElement>("[data-transition-link]")).map(
-      (link) => {
-        const handleClick = (event: MouseEvent) => {
-          const href = link.getAttribute("href");
-          if (!href || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || href.startsWith("#")) {
-            return;
-          }
+    const transitionHandlers = Array.from(
+      document.querySelectorAll<HTMLAnchorElement>("[data-transition-link]"),
+    ).map((link) => {
+      const handleClick = (event: MouseEvent) => {
+        const href = link.getAttribute("href");
+        if (
+          !href ||
+          event.metaKey ||
+          event.ctrlKey ||
+          event.shiftKey ||
+          event.altKey ||
+          href.startsWith("#")
+        ) {
+          return;
+        }
 
-          event.preventDefault();
-          const rect = link.getBoundingClientRect();
-          const labelSource =
-            link.querySelector("h3")?.textContent ||
-            link.querySelector("strong")?.textContent ||
-            link.textContent ||
-            "navigating";
-          const label = `${labelSource.trim().replace(/\s+/g, " ")} / navigating`;
-          const state: TransitionState = {
-            label,
-            left: `${rect.left + rect.width / 2}px`,
-            top: `${rect.top + rect.height / 2}px`,
-          };
-
-          applyTransitionState(state);
-          if (transitionLabel) {
-            transitionLabel.textContent = label;
-          }
-
-          sessionStorage.setItem(transitionStateKey, JSON.stringify(state));
-          requestAnimationFrame(() => {
-            document.body.classList.add("is-transitioning-cover");
-          });
-          transitionTimeout = window.setTimeout(() => {
-            window.location.href = href;
-          }, transitionCoverDuration);
+        event.preventDefault();
+        const rect = link.getBoundingClientRect();
+        const labelSource =
+          link.querySelector("h3")?.textContent ||
+          link.querySelector("strong")?.textContent ||
+          link.textContent ||
+          "navigating";
+        const label = `${labelSource.trim().replace(/\s+/g, " ")} / navigating`;
+        const state: TransitionState = {
+          label,
+          left: `${rect.left + rect.width / 2}px`,
+          top: `${rect.top + rect.height / 2}px`,
         };
 
-        link.addEventListener("click", handleClick);
-        return { handleClick, link };
-      },
-    );
+        applyTransitionState(state);
+        if (transitionLabel) {
+          transitionLabel.textContent = label;
+        }
+
+        sessionStorage.setItem(transitionStateKey, JSON.stringify(state));
+        requestAnimationFrame(() => {
+          document.body.classList.add("is-transitioning-cover");
+        });
+        transitionTimeout = window.setTimeout(() => {
+          window.location.href = href;
+        }, transitionCoverDuration);
+      };
+
+      link.addEventListener("click", handleClick);
+      return { handleClick, link };
+    });
 
     requestAnimationFrame(() => {
       document.body.classList.add("ready");
@@ -130,11 +139,18 @@ export function DetailEffects() {
     return () => {
       window.clearTimeout(transitionTimeout);
       revealObserver?.disconnect();
-      document.body.classList.remove("detail-page", "ready", "is-entering-cover", "is-entering-close");
+      document.body.classList.remove(
+        "detail-page",
+        "ready",
+        "is-entering-cover",
+        "is-entering-close",
+      );
       window.removeEventListener("scroll", updateScrollProgress);
       window.removeEventListener("scroll", applyCompactHeader);
       window.removeEventListener("resize", applyCompactHeader);
-      transitionHandlers.forEach(({ handleClick, link }) => link.removeEventListener("click", handleClick));
+      transitionHandlers.forEach(({ handleClick, link }) =>
+        link.removeEventListener("click", handleClick),
+      );
     };
   }, []);
 

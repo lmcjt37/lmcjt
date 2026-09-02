@@ -204,7 +204,11 @@ export function HomeEffects() {
           input.select();
           const copied = document.execCommand("copy");
           input.remove();
-          copied ? resolve() : reject(new Error("copy failed"));
+          if (copied) {
+            resolve();
+          } else {
+            reject(new Error("copy failed"));
+          }
         });
 
       write
@@ -266,69 +270,78 @@ export function HomeEffects() {
 
     document.querySelectorAll(".reveal").forEach((element) => revealObserver.observe(element));
 
-    const cardHandlers = Array.from(document.querySelectorAll<HTMLElement>(".work-card")).map((card) => {
-      const handlePointerMove = (event: PointerEvent) => {
-        const rect = card.getBoundingClientRect();
-        const x = (event.clientX - rect.left) / rect.width;
-        const y = (event.clientY - rect.top) / rect.height;
-        card.style.setProperty("--card-x", `${x * 100}%`);
-        card.style.setProperty("--card-y", `${y * 100}%`);
-        card.style.setProperty("--rx", `${(0.5 - y) * 5}deg`);
-        card.style.setProperty("--ry", `${(x - 0.5) * 7}deg`);
-      };
-
-      const handlePointerLeave = () => {
-        card.style.setProperty("--rx", "0deg");
-        card.style.setProperty("--ry", "0deg");
-      };
-
-      card.addEventListener("pointermove", handlePointerMove);
-      card.addEventListener("pointerleave", handlePointerLeave);
-
-      return { card, handlePointerLeave, handlePointerMove };
-    });
-
-    const transitionHandlers = Array.from(document.querySelectorAll<HTMLAnchorElement>("[data-transition-link]")).map(
-      (link) => {
-        const handleClick = (event: MouseEvent) => {
-          const href = link.getAttribute("href");
-          if (!href || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || href.startsWith("#")) {
-            return;
-          }
-
-          event.preventDefault();
-          const rect = link.getBoundingClientRect();
-          const labelSource =
-            link.querySelector("h3")?.textContent ||
-            link.querySelector("strong")?.textContent ||
-            link.textContent ||
-            "navigating";
-          const label = `${labelSource.trim().replace(/\s+/g, " ")} / navigating`;
-          const state: TransitionState = {
-            label,
-            left: `${rect.left + rect.width / 2}px`,
-            top: `${rect.top + rect.height / 2}px`,
-          };
-
-          applyTransitionState(state);
-
-          if (transitionLabel) {
-            transitionLabel.textContent = label;
-          }
-
-          sessionStorage.setItem(transitionStateKey, JSON.stringify(state));
-          requestAnimationFrame(() => {
-            document.body.classList.add("is-transitioning-cover");
-          });
-          transitionTimeout = window.setTimeout(() => {
-            window.location.href = href;
-          }, transitionCoverDuration);
+    const cardHandlers = Array.from(document.querySelectorAll<HTMLElement>(".work-card")).map(
+      (card) => {
+        const handlePointerMove = (event: PointerEvent) => {
+          const rect = card.getBoundingClientRect();
+          const x = (event.clientX - rect.left) / rect.width;
+          const y = (event.clientY - rect.top) / rect.height;
+          card.style.setProperty("--card-x", `${x * 100}%`);
+          card.style.setProperty("--card-y", `${y * 100}%`);
+          card.style.setProperty("--rx", `${(0.5 - y) * 5}deg`);
+          card.style.setProperty("--ry", `${(x - 0.5) * 7}deg`);
         };
 
-        link.addEventListener("click", handleClick);
-        return { link, handleClick };
+        const handlePointerLeave = () => {
+          card.style.setProperty("--rx", "0deg");
+          card.style.setProperty("--ry", "0deg");
+        };
+
+        card.addEventListener("pointermove", handlePointerMove);
+        card.addEventListener("pointerleave", handlePointerLeave);
+
+        return { card, handlePointerLeave, handlePointerMove };
       },
     );
+
+    const transitionHandlers = Array.from(
+      document.querySelectorAll<HTMLAnchorElement>("[data-transition-link]"),
+    ).map((link) => {
+      const handleClick = (event: MouseEvent) => {
+        const href = link.getAttribute("href");
+        if (
+          !href ||
+          event.metaKey ||
+          event.ctrlKey ||
+          event.shiftKey ||
+          event.altKey ||
+          href.startsWith("#")
+        ) {
+          return;
+        }
+
+        event.preventDefault();
+        const rect = link.getBoundingClientRect();
+        const labelSource =
+          link.querySelector("h3")?.textContent ||
+          link.querySelector("strong")?.textContent ||
+          link.textContent ||
+          "navigating";
+        const label = `${labelSource.trim().replace(/\s+/g, " ")} / navigating`;
+        const state: TransitionState = {
+          label,
+          left: `${rect.left + rect.width / 2}px`,
+          top: `${rect.top + rect.height / 2}px`,
+        };
+
+        applyTransitionState(state);
+
+        if (transitionLabel) {
+          transitionLabel.textContent = label;
+        }
+
+        sessionStorage.setItem(transitionStateKey, JSON.stringify(state));
+        requestAnimationFrame(() => {
+          document.body.classList.add("is-transitioning-cover");
+        });
+        transitionTimeout = window.setTimeout(() => {
+          window.location.href = href;
+        }, transitionCoverDuration);
+      };
+
+      link.addEventListener("click", handleClick);
+      return { link, handleClick };
+    });
 
     const handleCommandOpen = () => {
       if (!commandDialog?.open) {
@@ -337,13 +350,15 @@ export function HomeEffects() {
     };
     const handleCommandClose = () => commandDialog?.close();
     const handleIgnite = () => ignite();
-    const handleSpark = () => addTrace(Math.random() * window.innerWidth, window.innerHeight * 0.72);
+    const handleSpark = () =>
+      addTrace(Math.random() * window.innerWidth, window.innerHeight * 0.72);
     const handleQuietChaos = () => {
       document.body.classList.toggle("chaos");
       commandDialog?.close();
       ignite();
     };
-    const handleCopyEmail = (event: MouseEvent) => copyEmail(event.currentTarget as HTMLButtonElement);
+    const handleCopyEmail = (event: MouseEvent) =>
+      copyEmail(event.currentTarget as HTMLButtonElement);
     const handleKeyDown = (event: KeyboardEvent) => {
       if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === "k") {
         event.preventDefault();
@@ -398,7 +413,9 @@ export function HomeEffects() {
       quietChaos?.removeEventListener("click", handleQuietChaos);
       copyEmailButton?.removeEventListener("click", handleCopyEmail);
       hero?.removeEventListener("dblclick", handleHeroDoubleClick);
-      transitionHandlers.forEach(({ link, handleClick }) => link.removeEventListener("click", handleClick));
+      transitionHandlers.forEach(({ link, handleClick }) =>
+        link.removeEventListener("click", handleClick),
+      );
       cardHandlers.forEach(({ card, handlePointerLeave, handlePointerMove }) => {
         card.removeEventListener("pointermove", handlePointerMove);
         card.removeEventListener("pointerleave", handlePointerLeave);
