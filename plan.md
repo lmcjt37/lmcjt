@@ -32,12 +32,12 @@
   - Move global metadata and document-level structure into `app/layout.tsx`.
   - Import the existing `styles.css` as the global stylesheet with minimal selector changes.
 
-- [ ] 2. Port static assets and global shell.
+- [x] 2. Port static assets and global shell.
   - Move `favicon.svg` and `assets/` into the appropriate Next static locations.
   - Extract shared header, footer, page transition overlay, skip link, grain, and progress elements into components.
   - Preserve existing class names so the current CSS continues to carry the design.
 
-- [ ] 3. Port the home page and browser interactions.
+- [x] 3. Port the home page and browser interactions.
   - Convert `index.html` into `app/page.tsx`.
   - Replace imperative card rendering from `script.js` with React-rendered components.
   - Move hero canvas, command dialog, copy email, card tilt, reveal-on-scroll, scroll progress, chaos mode, and navigation transition behavior into client components/hooks.
@@ -72,7 +72,7 @@
 
 ## Verification
 
-- [ ] Run `npm run lint` or the repo's equivalent static checks.
+- [x] Run `npm run typecheck` as the current equivalent static check.
 - [x] Run `npm run build` and confirm every static route generates successfully.
 - [ ] Run the Next.js dev server and manually verify home, project detail, notes archive, note detail, shelf archive, and shelf detail routes.
 - [ ] Verify no internal links still target old `.html` files.
