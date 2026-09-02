@@ -122,6 +122,9 @@ export default function HomePage() {
             <p className="label">04 / Contact</p>
             <h2>Bring me a product knot, a developer workflow, or a tiny delightful idea.</h2>
             <div className="contact-actions">
+              <a href="/resume/" data-transition-link>
+                Resume
+              </a>
               <a href="mailto:hello@lmcjt.dev">hello@lmcjt.dev</a>
               <a href="https://www.linkedin.com/in/lukemalcolmtaylor/">LinkedIn</a>
               <a href="https://github.com/lmcjt37">GitHub</a>
