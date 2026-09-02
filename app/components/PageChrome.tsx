@@ -5,10 +5,11 @@ import { SiteHeader } from "./SiteHeader";
 type PageChromeProps = {
   children: React.ReactNode;
   commandButton?: boolean;
+  detailPage?: boolean;
   footerHomeActions?: boolean;
 };
 
-export function PageChrome({ children, commandButton, footerHomeActions }: PageChromeProps) {
+export function PageChrome({ children, commandButton, detailPage = false, footerHomeActions }: PageChromeProps) {
   return (
     <>
       <div className="grain" aria-hidden="true" />
@@ -17,7 +18,7 @@ export function PageChrome({ children, commandButton, footerHomeActions }: PageC
       <a className="skip-link" href="#main">
         Skip to content
       </a>
-      <SiteHeader commandButton={commandButton} />
+      <SiteHeader brandHref={detailPage ? "/" : "#hero"} commandButton={commandButton} homeNav={!detailPage} />
       {children}
       <SiteFooter homeOnlyActions={footerHomeActions} />
     </>

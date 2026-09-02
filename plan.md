@@ -49,7 +49,7 @@
   - Make home cards, archive pages, and detail routes read from the same source of truth.
   - Implemented initial metadata in `app/data/content.ts`, with home cards derived through `app/data/home.ts`.
 
-- [ ] 5. Build slug-based routes and archives.
+- [x] 5. Build slug-based routes and archives.
   - Add `app/projects/[slug]/page.tsx`, `app/notes/[slug]/page.tsx`, and `app/shelf/[slug]/page.tsx`.
   - Add archive routes at `app/notes/page.tsx` and `app/shelf/page.tsx`.
   - Use static params for every known slug.
@@ -76,7 +76,7 @@
 - [x] Run `npm run typecheck` as the current equivalent static check.
 - [x] Run `npm run build` and confirm every static route generates successfully.
 - [ ] Run the Next.js dev server and manually verify home, project detail, notes archive, note detail, shelf archive, and shelf detail routes.
-- [ ] Verify no internal links still target old `.html` files.
+- [x] Verify no internal links still target old `.html` files.
 - [ ] Verify exported output works for GitHub Pages.
 - [ ] Check responsive layouts at mobile and desktop widths.
 
@@ -85,5 +85,5 @@
 - DR-001: Use Next.js App Router with static generation
 - DR-002: Preserve current visual design during the direct port
 - DR-003: Use typed metadata plus MDX for long-form content
-- DR-004: Prefer slug-based routes with an explicit legacy URL strategy
+- DR-004: Use slug-based routes and drop legacy HTML paths
 - DR-005: Deploy with GitHub Pages static export

@@ -11,7 +11,9 @@ export function SiteFooter({ homeOnlyActions = false }: SiteFooterProps) {
           leave a trace
         </button>
       ) : (
-        <a href="/">home</a>
+        <a href="/" data-transition-link>
+          home
+        </a>
       )}
     </footer>
   );
