@@ -1,18 +1,72 @@
-# Portfolio for Luke taylor [https://lmcjt.dev](https://lmcjt.dev)
+# lmcjt.dev
 
-## Technologies used 🛠️
+Luke Taylor's personal site and portfolio.
 
-- [Gatsby](https://www.gatsbyjs.org/) - Static Site Generator
-- [GraphQL](https://graphql.org/) - Query language for APIs
-- [React](https://es.reactjs.org/) - Front-End JavaScript library
-- [Bootstrap 4](https://getbootstrap.com/docs/4.3/getting-started/introduction/) - Front-End UI library
-- [Sass](https://sass-lang.com/documentation) - CSS extension language
-- [UI Gradient](https://uigradients.com/#BrightVault) - Used for colour sampling
+This branch migrates the portfolio to a statically exported Next.js app: one landing page, linked project pages, a notes archive, and a shelf for books and links worth sharing.
 
-## License 📄
+## Stack
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+- Next.js App Router
+- React
+- TypeScript
+- MDX
+- CSS
+- SVG favicon
 
-## Acknowledgments 🎁
+The app exports to static files for GitHub Pages.
 
-- **Jacobo Martinez** - [https://github.com/cobidev](https://github.com/cobidev) - Who built the starter template used [https://www.gatsbyjs.com/starters/cobidev/gatsby-simplefolio/](https://www.gatsbyjs.com/starters/cobidev/gatsby-simplefolio/)
+## Structure
+
+- `app/` - Next.js App Router routes, components, data, and MDX content
+- `app/content/` - MDX content modules for projects, notes, and shelf entries
+- `app/data/` - typed metadata used by home cards, archives, and slug routes
+- `public/` - static assets served by Next.js
+- `styles.css` - shared visual system, layout, colour palette, and motion
+- `next.config.mjs` - static export and MDX configuration
+- `.github/workflows/deploy.yml` - GitHub Pages deployment workflow
+
+## Local preview
+
+Install dependencies:
+
+```sh
+npm install
+```
+
+Run the Next.js dev server:
+
+```sh
+npm run dev
+```
+
+Then visit `http://localhost:3000`.
+
+Check types:
+
+```sh
+npm run typecheck
+```
+
+Build the static export:
+
+```sh
+npm run build
+```
+
+The static site is written to `out/`.
+
+## Publishing
+
+GitHub Pages deployment is handled by `.github/workflows/deploy.yml`.
+
+In the repository settings, configure Pages to use GitHub Actions as the source. Pushing to `main` runs `npm ci`, `npm run build`, uploads `out/`, and deploys it.
+
+## Content notes
+
+Current content includes:
+
+- three featured project cards on home, with deeper project pages
+- a notes archive with the first essay, `The AI story so far...`
+- a shelf archive with curated books and links
+
+Content metadata lives in `app/data/content.ts`. Long-form project, notes, and shelf copy lives in MDX files under `app/content/`.
