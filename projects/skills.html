@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="skills by Luke Taylor: a personal operating layer for AI-assisted engineering built around repeatable, evolving workflows."
+    />
+    <meta name="theme-color" content="#101616" />
+    <title>skills - Luke Taylor</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+  </head>
+  <body class="detail-page">
+    <div class="grain" aria-hidden="true"></div>
+    <div class="progress" aria-hidden="true"></div>
+    <div class="page-transition" aria-hidden="true">
+      <div class="page-transition__layers">
+        <div class="page-transition__layer"></div>
+        <div class="page-transition__layer"></div>
+        <div class="page-transition__layer"></div>
+        <div class="page-transition__layer"></div>
+        <div class="page-transition__layer"></div>
+      </div>
+      <div class="page-transition__label">LMCJT / navigating</div>
+    </div>
+    <header class="site-header">
+      <a class="brand" href="../index.html" aria-label="Luke Taylor home" data-transition-link>
+        <span class="brand-text">
+          <strong class="brand-full">Luke Taylor</strong>
+          <strong class="brand-short">Luke Taylor</strong>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="../index.html#work" data-transition-link><span>01</span>Work</a>
+        <a href="../index.html#notes" data-transition-link><span>02</span>Notes</a>
+        <a href="../index.html#shelf" data-transition-link><span>03</span>Shelf</a>
+        <a href="../index.html#contact" data-transition-link><span>04</span>Contact</a>
+      </nav>
+      <button class="menu-button" type="button" aria-hidden="true" tabindex="-1">
+        <span></span>
+        <span></span>
+      </button>
+    </header>
+    <main>
+      <section class="detail-hero reveal">
+        <a class="detail-back" href="../index.html#work" data-transition-link>Back to work</a>
+        <div class="detail-topline">
+          <span>Project / 02</span>
+          <span>AI workflows / DX / tooling</span>
+        </div>
+        <div class="detail-grid">
+          <div class="detail-copy">
+            <p class="label">skills</p>
+            <h1>A personal operating layer for AI-assisted engineering.</h1>
+            <p>
+              `skills` is a collection of AI skills that I wrote for myself. It grew out of
+              repeatedly asking AI to do the same kinds of setup, planning, and journalling work,
+              and turning those recurring actions into commands that are easier to reuse, refine,
+              and trust over time.
+            </p>
+            <ul>
+              <li>Wraps repeated workflows into commands like <code>/dev-plan</code> and <code>/journal</code>.</li>
+              <li>Creates durable context that can be reused across sessions and handoffs.</li>
+              <li>Stays repeatable, but keeps evolving as the surrounding workflow changes.</li>
+            </ul>
+            <div class="detail-links">
+              <a href="../index.html#work" data-transition-link>Watch this space</a>
+              <a href="tiny-delight-studies.html" data-transition-link>Next project</a>
+            </div>
+          </div>
+          <aside class="detail-side">
+            <section class="detail-panel">
+              <h2>Why it matters</h2>
+              <p>
+                I originally wrote <code>/dev-plan</code> to take a ticket and turn it into a plan
+                worth working against, and <code>/journal</code> to capture notes that could be
+                handed off to other engineers or fed back into AI to summarise the final outcome.
+                That pattern scaled into a broader toolkit.
+              </p>
+            </section>
+            <section class="detail-panel">
+              <h2>What it proves</h2>
+              <p>
+                It shows how forward-thinking I am about working with AI. The value is not just
+                speed. It is recognising which repeated engineering actions can become stable,
+                reusable workflows and then shaping them into something practical.
+              </p>
+            </section>
+          </aside>
+        </div>
+      </section>
+      <section class="detail-body">
+        <article class="detail-card reveal">
+          <h2>Core idea</h2>
+          <p>
+            Anything you do repeatedly with AI can be wrapped into a skill. Once it exists as a
+            simple command, you can keep refining it, extend it to new workflows, and adapt it as
+            the surrounding tools or project constraints change.
+          </p>
+        </article>
+        <article class="detail-card reveal">
+          <h2>Current state</h2>
+          <p>
+            The project is active, used regularly, and still evolving. It was built for my own use
+            first, but published so others working with AI-assisted engineering can borrow the same
+            patterns. It also directly supports other experiments, including the <code>/cosmograph</code>
+            skill used to generate data for Cosmographer.
+          </p>
+        </article>
+      </section>
+    </main>
+    <footer class="footer">
+      <span>© 2026 Luke Taylor</span>
+      <a href="../index.html" data-transition-link>home</a>
+    </footer>
+    <script src="../detail.js"></script>
+  </body>
+</html>

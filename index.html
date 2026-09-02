@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Luke Taylor is a software engineer focused on developer experience, product thinking, and memorable customer details."
+    />
+    <meta name="theme-color" content="#101616" />
+    <title>Luke Taylor - Software Engineer</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  </head>
+  <body>
+    <div class="grain" aria-hidden="true"></div>
+    <div class="progress" aria-hidden="true"></div>
+    <div class="page-transition" aria-hidden="true">
+      <div class="page-transition__layers">
+        <div class="page-transition__layer"></div>
+        <div class="page-transition__layer"></div>
+        <div class="page-transition__layer"></div>
+        <div class="page-transition__layer"></div>
+        <div class="page-transition__layer"></div>
+      </div>
+      <div class="page-transition__label">LMCJT / navigating</div>
+    </div>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <a class="brand" href="#hero" aria-label="Luke Taylor home">
+        <span class="brand-text">
+          <strong class="brand-full">Luke Taylor</strong>
+          <strong class="brand-short">Luke Taylor</strong>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="#work"><span>01</span>Work</a>
+        <a href="#notes"><span>02</span>Notes</a>
+        <a href="#shelf"><span>03</span>Shelf</a>
+        <a href="#contact"><span>04</span>Contact</a>
+      </nav>
+      <button class="menu-button" id="command-button" type="button" aria-label="Open command menu">
+        <span></span>
+        <span></span>
+      </button>
+    </header>
+
+    <main id="main">
+      <section class="hero" id="hero">
+        <canvas id="hero-field" aria-hidden="true"></canvas>
+        <div class="hero-topline">
+          <span>DX / product / delight</span>
+        </div>
+        <div class="hero-copy">
+          <p class="label">Mobile engineering, product thinking, and craft</p>
+          <h1 aria-label="I’m a mobile engineer focused on product, craft, and execution.">
+            <span>I’m a mobile engineer</span>
+            <span>focused on product,</span>
+            <span>craft, and execution.</span>
+          </h1>
+          <p class="intro">
+            I work across React Native and native iOS, from new consumer products to scaling
+            existing apps. My focus is practical: better UX, stronger developer experience, and
+            turning product strategy into work that is clear, executable, and worth shipping.
+          </p>
+        </div>
+        <div class="hero-dock" aria-label="Quick links">
+          <a href="#contact">Get in touch</a>
+          <a href="#work">View work</a>
+          <button id="ignite-button" type="button">Ignite</button>
+        </div>
+        <div class="hero-caption" aria-hidden="true">
+          <span>Move your cursor through the field</span>
+          <span>Double click for a hidden mode</span>
+        </div>
+      </section>
+
+      <section class="flow" aria-label="Portfolio">
+        <aside class="rail" aria-hidden="true">
+          <span>clarity</span>
+          <span>craft</span>
+          <span>spark</span>
+        </aside>
+
+        <section class="panel thesis reveal">
+          <p class="label">Point of view</p>
+          <h2>Useful products come from clear thinking and strong execution.</h2>
+          <p>
+            I like working where product ambition meets technical constraint. That usually means
+            improving UX, shaping simpler paths forward, and building delivery practices that help
+            teams move with confidence rather than chaos.
+          </p>
+          <div class="principles">
+            <span>Simplify the path</span>
+            <span>Build with intent</span>
+            <span>Keep quality practical</span>
+          </div>
+        </section>
+
+        <section class="work-panel reveal" id="work">
+          <div class="section-title">
+            <p class="label">01 / Work</p>
+            <h2>The fun part is making the hard bits feel obvious.</h2>
+          </div>
+          <div class="work-list" id="work-list"></div>
+          <div class="work-more">
+            <a class="work-more-link" href="https://github.com/lmcjt37" target="_blank" rel="noreferrer">
+              <span>Other work</span>
+              <span aria-hidden="true">→</span>
+            </a>
+          </div>
+        </section>
+
+        <section class="notes-shelf reveal" id="notes">
+          <div class="section-title">
+            <p class="label">02 / Notes</p>
+            <h2>Writing space for the thinking behind the work.</h2>
+          </div>
+          <div class="note-list" id="note-list"></div>
+          <div class="work-more">
+            <a class="scribbles-link" href="notes/index.html" data-transition-link>
+              <span>My scribbles</span>
+              <span aria-hidden="true">→</span>
+            </a>
+          </div>
+        </section>
+
+        <section class="notes-shelf reveal" id="shelf">
+          <div class="section-title">
+            <p class="label">03 / Shelf</p>
+            <h2>Things I would share across the table.</h2>
+          </div>
+          <div class="shelf-list" id="shelf-list"></div>
+          <div class="work-more">
+            <a class="shelf-link" href="shelf/index.html" data-transition-link>
+              <span>My shelf</span>
+              <span aria-hidden="true">→</span>
+            </a>
+          </div>
+        </section>
+
+        <section class="contact-panel reveal" id="contact">
+          <p class="label">04 / Contact</p>
+          <h2>Bring me a product knot, a developer workflow, or a tiny delightful idea.</h2>
+          <div class="contact-actions">
+            <a href="mailto:hello@lmcjt.dev">hello@lmcjt.dev</a>
+            <a href="https://www.linkedin.com/in/lukemalcolmtaylor/">LinkedIn</a>
+            <a href="https://github.com/lmcjt37">GitHub</a>
+            <button class="copy-email" type="button" data-email="hello@lmcjt.dev">
+              <span>Copy email</span>
+              <strong id="copy-status">ready</strong>
+            </button>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>© 2026 Luke Taylor</span>
+      <button id="spark-button" type="button">leave a trace</button>
+    </footer>
+
+    <dialog class="command-dialog" id="command-dialog" aria-labelledby="command-title">
+      <form method="dialog">
+        <div class="command-top">
+          <h2 id="command-title">Command surface</h2>
+          <button value="close" aria-label="Close menu">×</button>
+        </div>
+        <div class="command-list">
+          <a href="#work" data-command-link><span>01</span>Work</a>
+          <a href="#notes" data-command-link><span>02</span>Notes</a>
+          <a href="#shelf" data-command-link><span>03</span>Shelf</a>
+          <a href="#contact" data-command-link><span>04</span>Contact</a>
+          <button id="quiet-chaos" type="button"><span>05</span>Quiet chaos</button>
+        </div>
+      </form>
+    </dialog>
+
+    <script src="script.js"></script>
+  </body>
+</html>
