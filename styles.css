@@ -1190,12 +1190,20 @@ body.ready h1 > span:nth-child(4) {
 }
 
 .detail-back {
-  color: var(--muted);
+  color: var(--teal);
   display: inline-flex;
   font-size: 0.85rem;
   gap: 0.55rem;
   margin-bottom: 2rem;
   text-transform: uppercase;
+  transition:
+    color 180ms ease,
+    transform 180ms ease;
+}
+
+.detail-back:hover {
+  color: color-mix(in srgb, var(--teal), white 18%);
+  transform: translateY(-0.12rem);
 }
 
 .detail-back::before {
@@ -1376,6 +1384,184 @@ body.ready h1 > span:nth-child(4) {
   margin-bottom: 0.8rem;
 }
 
+.resume-page {
+  padding: clamp(1rem, 4vw, 3rem);
+}
+
+.resume-hero,
+.resume-timeline-section {
+  margin-inline: auto;
+  max-width: 88rem;
+}
+
+.resume-hero {
+  background:
+    radial-gradient(circle at 82% 18%, rgba(50, 230, 255, 0.15), transparent 18rem),
+    radial-gradient(circle at 16% 76%, rgba(199, 255, 61, 0.1), transparent 18rem),
+    rgba(244, 239, 229, 0.05);
+  border: 1px solid var(--line);
+  border-radius: 1.6rem;
+  margin-top: 1.5rem;
+  overflow: hidden;
+  padding: clamp(1.5rem, 4vw, 3rem);
+  position: relative;
+}
+
+.resume-hero::before {
+  background:
+    linear-gradient(180deg, rgba(244, 239, 229, 0.05), transparent),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.06), transparent 42%);
+  content: "";
+  inset: 0;
+  pointer-events: none;
+  position: absolute;
+}
+
+.resume-hero-grid,
+.resume-tech-panel {
+  position: relative;
+  z-index: 1;
+}
+
+.resume-hero-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: minmax(0, 1.08fr) minmax(18rem, 0.92fr);
+}
+
+.resume-tech-panel {
+  align-self: start;
+  background: rgba(244, 239, 229, 0.05);
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+.resume-tech-panel h2 {
+  font-size: 1rem;
+  margin-bottom: 0.9rem;
+}
+
+.resume-tech-groups {
+  display: grid;
+  gap: 1rem;
+}
+
+.resume-tech-group h3 {
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 900;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+
+.resume-tech-list,
+.resume-timeline-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.resume-tech-list span,
+.resume-timeline-tags span {
+  background: rgba(247, 242, 255, 0.06);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--muted);
+  display: inline-flex;
+  font-size: 0.78rem;
+  font-weight: 800;
+  padding: 0.42rem 0.62rem;
+  text-transform: uppercase;
+}
+
+.resume-timeline-section {
+  padding-block: 1rem 4rem;
+}
+
+.resume-timeline {
+  margin-left: clamp(1rem, 4vw, 3rem);
+  padding-left: clamp(1.4rem, 4vw, 3rem);
+  position: relative;
+}
+
+.resume-timeline::before {
+  background:
+    linear-gradient(180deg, var(--teal), var(--acid), var(--ember), transparent),
+    repeating-linear-gradient(
+      180deg,
+      transparent 0 3.2rem,
+      rgba(247, 242, 255, 0.16) 3.2rem 3.26rem
+    );
+  content: "";
+  inset: 0 auto 0 0;
+  position: absolute;
+  width: 1px;
+}
+
+.resume-timeline-item {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 4rem minmax(0, 1fr);
+  padding-block: 0.75rem;
+  position: relative;
+}
+
+.resume-timeline-marker {
+  align-items: center;
+  aspect-ratio: 1;
+  background:
+    radial-gradient(circle, rgba(10, 7, 20, 0.96) 42%, rgba(50, 230, 255, 0.16) 43%), var(--paper);
+  border: 1px solid color-mix(in srgb, var(--teal), white 20%);
+  border-radius: 50%;
+  color: var(--acid);
+  display: grid;
+  font-size: 0.75rem;
+  font-weight: 950;
+  justify-self: center;
+  line-height: 1;
+  margin-left: calc(clamp(1.4rem, 4vw, 3rem) * -1 - 2rem);
+  place-items: center;
+  position: sticky;
+  top: 6rem;
+  width: 3.2rem;
+  z-index: 1;
+}
+
+.resume-timeline-card {
+  background: rgba(244, 239, 229, 0.05);
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+  min-height: 13rem;
+  padding: clamp(1rem, 3vw, 1.5rem);
+}
+
+.resume-timeline-meta {
+  color: var(--muted);
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 0.78rem;
+  font-weight: 900;
+  gap: 0.6rem;
+  justify-content: space-between;
+  margin-bottom: 0.9rem;
+  text-transform: uppercase;
+}
+
+.resume-timeline-card h2 {
+  font-size: clamp(2rem, 5vw, 4.8rem);
+  line-height: 0.9;
+  margin-bottom: 0.9rem;
+  max-width: 11ch;
+}
+
+.resume-timeline-card p {
+  color: var(--muted);
+  line-height: 1.65;
+  margin: 0 0 1.2rem;
+  max-width: 48rem;
+}
+
 .command-dialog {
   background: rgba(16, 22, 22, 0.92);
   backdrop-filter: blur(24px);
@@ -1524,7 +1710,8 @@ body.ready h1 > span:nth-child(4) {
   .note-list,
   .shelf-list,
   .detail-grid,
-  .detail-body {
+  .detail-body,
+  .resume-hero-grid {
     grid-template-columns: 1fr;
   }
 
@@ -1630,6 +1817,30 @@ body.ready h1 > span:nth-child(4) {
 
   .detail-copy h1 {
     font-size: clamp(2.6rem, 13vw, 4.2rem);
+  }
+
+  .resume-page {
+    padding: 1rem;
+  }
+
+  .resume-timeline {
+    margin-left: 0;
+    padding-left: 1.2rem;
+  }
+
+  .resume-timeline-item {
+    grid-template-columns: 2.8rem minmax(0, 1fr);
+  }
+
+  .resume-timeline-marker {
+    font-size: 0.68rem;
+    margin-left: -2.8rem;
+    top: 5rem;
+    width: 2.35rem;
+  }
+
+  .resume-timeline-card h2 {
+    font-size: clamp(1.9rem, 11vw, 3.6rem);
   }
 
   .work-main h3 {
