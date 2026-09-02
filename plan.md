@@ -43,10 +43,11 @@
   - Move hero canvas, command dialog, copy email, card tilt, reveal-on-scroll, scroll progress, chaos mode, and navigation transition behavior into client components/hooks.
   - Keep the existing animation timings and visual states unless a browser/API mismatch forces adjustment.
 
-- [ ] 4. Introduce cleaner content models.
+- [x] 4. Introduce cleaner content models.
   - Create typed data modules for project, note, and shelf metadata.
   - Define shared fields such as `slug`, `title`, `description`, `type`, `date`, `tags`, `href`, `nextSlug`, and archive visibility.
   - Make home cards, archive pages, and detail routes read from the same source of truth.
+  - Implemented initial metadata in `app/data/content.ts`, with home cards derived through `app/data/home.ts`.
 
 - [ ] 5. Build slug-based routes and archives.
   - Add `app/projects/[slug]/page.tsx`, `app/notes/[slug]/page.tsx`, and `app/shelf/[slug]/page.tsx`.

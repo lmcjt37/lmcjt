@@ -1,3 +1,5 @@
+import { getFeaturedContent, notes, projects, shelf } from "./content";
+
 export type WorkItem = {
   title: string;
   proof: string;
@@ -13,40 +15,23 @@ export type HomeListItem = {
   href: string;
 };
 
-export const workItems: WorkItem[] = [
-  {
-    title: "Coffee Dev",
-    proof:
-      "Turns GitHub activity into a readable cafe simulation with authored layouts, idle loops, and product-facing progression.",
-    tags: ["Next.js", "PixiJS", "simulation UX"],
-    glow: "rgba(98, 213, 197, 0.78)",
-    href: "/projects/coffee-dev",
-  },
-  {
-    title: "Cosmographer",
-    proof:
-      "A way to visualise a project’s domains and cross-cutting concerns by traversing code, tracing connections, and rendering the result with Cosmograph.",
-    tags: ["Cosmograph", "React", "graph tooling"],
-    glow: "rgba(139, 93, 255, 0.66)",
-    href: "/projects/cosmographer",
-  },
-  {
-    title: "skills",
-    proof:
-      "A personal operating layer for AI-assisted engineering, built around repeatable commands like /dev-plan and /journal to turn recurring workflows into durable skills.",
-    tags: ["AI workflows", "DX", "tooling"],
-    glow: "rgba(255, 125, 85, 0.68)",
-    href: "/projects/skills",
-  },
-];
+export const workItems: WorkItem[] = getFeaturedContent(projects).map((item) => ({
+  title: item.title,
+  proof: item.proof,
+  tags: item.tags,
+  glow: item.glow,
+  href: item.route,
+}));
+
+const featuredNotes = getFeaturedContent(notes).map<HomeListItem>((item) => ({
+  type: item.type,
+  title: item.title,
+  text: "Early thoughts on using AI seriously in engineering work without handing over judgment.",
+  href: item.route,
+}));
 
 export const noteItems: HomeListItem[] = [
-  {
-    type: "Essay",
-    title: "The AI story so far...",
-    text: "Early thoughts on using AI seriously in engineering work without handing over judgment.",
-    href: "/notes/the-ai-story-so-far",
-  },
+  ...featuredNotes,
   {
     type: "Placeholder",
     title: "More notes, soon",
@@ -61,47 +46,9 @@ export const noteItems: HomeListItem[] = [
   },
 ];
 
-export const shelfItems: HomeListItem[] = [
-  {
-    type: "Book",
-    title: "Dune saga",
-    text: "A shelf note in progress.",
-    href: "/shelf/dune-saga",
-  },
-  {
-    type: "Book",
-    title: "Ready Player One and Two",
-    text: "A shelf note in progress.",
-    href: "/shelf/ready-player-one-and-two",
-  },
-  {
-    type: "Book",
-    title: "The Martian",
-    text: "A shelf note in progress.",
-    href: "/shelf/the-martian",
-  },
-  {
-    type: "Book",
-    title: "Project Hail Mary",
-    text: "A shelf note in progress.",
-    href: "/shelf/project-hail-mary",
-  },
-  {
-    type: "Book",
-    title: "Artemis",
-    text: "A shelf note in progress.",
-    href: "/shelf/artemis",
-  },
-  {
-    type: "Link",
-    title: "ICQR Tree",
-    text: "A shelf note in progress.",
-    href: "/shelf/icqr-tree",
-  },
-  {
-    type: "Link",
-    title: "Link Lowdown",
-    text: "A shelf note in progress.",
-    href: "/shelf/link-lowdown",
-  },
-];
+export const shelfItems: HomeListItem[] = getFeaturedContent(shelf).map((item) => ({
+  type: item.type,
+  title: item.title,
+  text: "A shelf note in progress.",
+  href: item.route,
+}));
