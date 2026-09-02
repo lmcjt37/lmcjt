@@ -34,8 +34,11 @@ export function SiteHeader({
         <a href={`${homePrefix}#shelf`} data-transition-link={!homeNav || undefined}>
           <span>03</span>Shelf
         </a>
+        <a href="/resume/" data-transition-link>
+          <span>04</span>Resume
+        </a>
         <a href={`${homePrefix}#contact`} data-transition-link={!homeNav || undefined}>
-          <span>04</span>Contact
+          <span>05</span>Contact
         </a>
       </nav>
       <button
