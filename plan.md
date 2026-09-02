@@ -68,19 +68,21 @@
   - Update `README.md` with Next.js development, build, preview, and GitHub Pages publishing instructions.
   - Added `.github/workflows/deploy.yml`, `trailingSlash: true`, and `.nojekyll` generation for GitHub Pages.
 
-- [ ] 8. Verify parity and clean up legacy files.
+- [x] 8. Verify parity and clean up legacy files.
   - Compare home, project, notes, and shelf pages against the current static site.
   - Check desktop and mobile layouts, reduced-motion behavior, canvas rendering, dialog behavior, copy email, reveal animation, page transitions, and internal navigation.
   - Remove obsolete root HTML and vanilla JS files only after the Next.js routes match behavior.
+  - Removed obsolete HTML, vanilla JS, and root asset source files after the Next.js routes and MDX content were verified.
+  - Captured desktop/mobile Playwright screenshots for home, project, and note routes.
 
 ## Verification
 
 - [x] Run `npm run typecheck` as the current equivalent static check.
 - [x] Run `npm run build` and confirm every static route generates successfully.
-- [ ] Run the Next.js dev server and manually verify home, project detail, notes archive, note detail, shelf archive, and shelf detail routes.
+- [x] Run the Next.js dev server and manually verify home, project detail, notes archive, note detail, shelf archive, and shelf detail routes.
 - [x] Verify no internal links still target old `.html` files.
 - [x] Verify exported output works for GitHub Pages.
-- [ ] Check responsive layouts at mobile and desktop widths.
+- [x] Check responsive layouts at mobile and desktop widths.
 
 ## Decisions
 

@@ -16,7 +16,6 @@ const dateFormatter = new Intl.DateTimeFormat("en-US", {
 
 export function ProjectDetailPage({ content, project }: ProjectDetailPageProps) {
   const nextProject = project.nextSlug ? getContentBySlug(projects, project.nextSlug) : undefined;
-  const Content = content.default;
 
   return (
     <PageChrome detailPage>
@@ -61,7 +60,12 @@ export function ProjectDetailPage({ content, project }: ProjectDetailPageProps) 
           </div>
         </section>
         <section className="detail-body">
-          <Content />
+          {content.detail.bodyCards.map((card) => (
+            <article className="detail-card reveal" key={card.title}>
+              <h2>{card.title}</h2>
+              <p>{card.body}</p>
+            </article>
+          ))}
         </section>
       </main>
       <DetailEffects />

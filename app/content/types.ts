@@ -8,6 +8,10 @@ export type ProjectContentDetail = {
     title: string;
     body: string;
   }[];
+  bodyCards: {
+    title: string;
+    body: string;
+  }[];
   primaryLinkLabel: string;
   primaryLinkHref: string;
 };

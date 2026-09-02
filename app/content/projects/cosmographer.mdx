@@ -19,25 +19,18 @@ export const detail = {
         "It shows I can build useful internal-style tools with a strong product instinct, then push them into something shareable. It also says a lot about how I use AI: quickly, deliberately, and with a human still steering every meaningful decision.",
     },
   ],
+  bodyCards: [
+    {
+      title: "How it works",
+      body:
+        "The viewer itself is intentionally small. The heavier part lives upstream in the skill and model workflow that traverses a codebase, extracts datapoints, and returns a graph structure for the app to render. The web app then stays focused on loading indexed points, links, config, and layout data in a simple self-contained package.",
+    },
+    {
+      title: "Current state",
+      body:
+        "It is still an active experiment. Getting good output depended heavily on model capability, context, and trial-and-error refinement, especially when working with older 4.x ChatGPT models. I want to revisit it with newer frontier models and push the quality of the traversal much further.",
+    },
+  ],
   primaryLinkLabel: "Watch this space",
   primaryLinkHref: "/#work",
 };
-
-<article className="detail-card reveal">
-  <h2>How it works</h2>
-  <p>
-    The viewer itself is intentionally small. The heavier part lives upstream in the skill and model
-    workflow that traverses a codebase, extracts datapoints, and returns a graph structure for the
-    app to render. The web app then stays focused on loading indexed points, links, config, and
-    layout data in a simple self-contained package.
-  </p>
-</article>
-
-<article className="detail-card reveal">
-  <h2>Current state</h2>
-  <p>
-    It is still an active experiment. Getting good output depended heavily on model capability,
-    context, and trial-and-error refinement, especially when working with older 4.x ChatGPT models. I
-    want to revisit it with newer frontier models and push the quality of the traversal much further.
-  </p>
-</article>

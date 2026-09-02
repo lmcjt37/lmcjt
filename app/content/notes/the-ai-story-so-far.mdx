@@ -3,98 +3,40 @@ export const detail = {
     "I was late to AI on purpose. I thought it looked like a fad dressed up as autocomplete, and I had no real interest in learning what model context was or why I should care. Then I spent enough time with it to form a real opinion, and my view changed quite a lot.",
 };
 
-<section>
-  <p>
-    The short version is this: AI is great for leverage and bad without judgment. It can help you
-    build faster, think wider, and clear a lot of routine friction. It can also produce slop,
-    anti-patterns, and a quiet loss of context if you stop steering.
-  </p>
-</section>
+The short version is this: AI is great for leverage and bad without judgment. It can help you build faster, think wider, and clear a lot of routine friction. It can also produce slop, anti-patterns, and a quiet loss of context if you stop steering.
 
-<section>
-  <h2>The skeptic phase</h2>
-  <p>
-    At the start I was honestly skeptical about the whole thing. I saw AI as a thin layer on top of
-    autocomplete, surrounded by a lot of noise. I was not eager to learn the new vocabulary, and I
-    didn't find the early discourse especially convincing.
-  </p>
-  <p>
-    So I made myself use it properly before settling on a view. That first stretch was rough: setup
-    friction, poor prompt responses, vague suggestions from other engineers, and a lot of
-    disagreement about what good usage even looked like.
-  </p>
-</section>
+## The skeptic phase
 
-<section>
-  <h2>The first a-ha moment</h2>
-  <p>
-    I kept investing time and eventually hit the first real turning point. I found a prompt format
-    and working style that gave me consistently decent results across most models at the time. That
-    was the moment it stopped feeling like a novelty and started feeling like a tool I could actually
-    shape.
-  </p>
-  <p>
-    Since then I've gone from skeptic to believer. My view now is simple: you're better off on the
-    ship steering than left on the island defending outdated opinions.
-  </p>
-</section>
+At the start I was honestly skeptical about the whole thing. I saw AI as a thin layer on top of autocomplete, surrounded by a lot of noise. I was not eager to learn the new vocabulary, and I didn't find the early discourse especially convincing.
 
-<section>
-  <h2>How I work with it</h2>
-  <p>
-    I mostly work in VS Code because it is still the best cockpit for everything in one place. I've
-    got Codex and Claude connected through extensions, and I give them more useful context with MCP
-    connections for tools like Figma, GitHub, and JIRA.
-  </p>
-  <p>
-    The workflow I trust is cyclical: analyse, plan, review and refine, implement, verify, then loop.
-    I commit regularly, diff changes often, review what the agent actually did, refactor overly
-    complex additions, strip noisy comments, and validate changes through manual and automated
-    testing. AI review can help too; I've had better results from Augment than CodeRabbit at spotting
-    edge cases.
-  </p>
-</section>
+So I made myself use it properly before settling on a view. That first stretch was rough: setup friction, poor prompt responses, vague suggestions from other engineers, and a lot of disagreement about what good usage even looked like.
 
-<section>
-  <h2>Why the baseline matters</h2>
-  <p>
-    The strongest results do not come from one clever prompt. They come from building a good baseline
-    around the agent: clear working files, strong guardrails, and conventions that support how you
-    and your team actually operate.
-  </p>
-  <p>
-    Prompt engineering is the core skill for me here. It is less about magic wording and more about
-    giving the model enough structure, boundaries, and context to produce work you can defend.
-  </p>
-</section>
+## The first a-ha moment
 
-<section>
-  <h2>Where it breaks down</h2>
-  <p>
-    One of the clearest pain points for me has been pixel art. I've spent a lot of time trying to
-    correct spritesheets with newer models and the final finesse is still painful. At some point that
-    stops being a prompt problem and starts being a tool selection problem. The right tool for the job
-    still matters.
-  </p>
-  <p>
-    More broadly, blind acceptance is where things rot. Without human-in-the-loop guidance, the result
-    is context collapse: sloppier decisions, weaker patterns, and engineers who gradually lose touch
-    with the deeper layers of their own domain.
-  </p>
-</section>
+I kept investing time and eventually hit the first real turning point. I found a prompt format and working style that gave me consistently decent results across most models at the time. That was the moment it stopped feeling like a novelty and started feeling like a tool I could actually shape.
 
-<section>
-  <h2>So far</h2>
-  <p>
-    All three of the projects on this site lean on AI heavily in different ways, whether that is
-    product ideation, workflow shaping, code generation, architecture traversal, or refinement loops.
-    I've learned a lot from that, both in what AI accelerates and in where it still needs a steady
-    human hand.
-  </p>
-  <p>
-    I am cautiously optimistic. AI is here, and more companies are pushing for real usage with soft
-    limits and guardrails. I think that is sensible. Strong baselines and good constraints matter. I
-    am optimistic about the leverage, cautious about the industry impact, and still very interested
-    in where the next few years take us.
-  </p>
-</section>
+Since then I've gone from skeptic to believer. My view now is simple: you're better off on the ship steering than left on the island defending outdated opinions.
+
+## How I work with it
+
+I mostly work in VS Code because it is still the best cockpit for everything in one place. I've got Codex and Claude connected through extensions, and I give them more useful context with MCP connections for tools like Figma, GitHub, and JIRA.
+
+The workflow I trust is cyclical: analyse, plan, review and refine, implement, verify, then loop. I commit regularly, diff changes often, review what the agent actually did, refactor overly complex additions, strip noisy comments, and validate changes through manual and automated testing. AI review can help too; I've had better results from Augment than CodeRabbit at spotting edge cases.
+
+## Why the baseline matters
+
+The strongest results do not come from one clever prompt. They come from building a good baseline around the agent: clear working files, strong guardrails, and conventions that support how you and your team actually operate.
+
+Prompt engineering is the core skill for me here. It is less about magic wording and more about giving the model enough structure, boundaries, and context to produce work you can defend.
+
+## Where it breaks down
+
+One of the clearest pain points for me has been pixel art. I've spent a lot of time trying to correct spritesheets with newer models and the final finesse is still painful. At some point that stops being a prompt problem and starts being a tool selection problem. The right tool for the job still matters.
+
+More broadly, blind acceptance is where things rot. Without human-in-the-loop guidance, the result is context collapse: sloppier decisions, weaker patterns, and engineers who gradually lose touch with the deeper layers of their own domain.
+
+## So far
+
+All three of the projects on this site lean on AI heavily in different ways, whether that is product ideation, workflow shaping, code generation, architecture traversal, or refinement loops. I've learned a lot from that, both in what AI accelerates and in where it still needs a steady human hand.
+
+I am cautiously optimistic. AI is here, and more companies are pushing for real usage with soft limits and guardrails. I think that is sensible. Strong baselines and good constraints matter. I am optimistic about the leverage, cautious about the industry impact, and still very interested in where the next few years take us.
