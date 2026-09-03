@@ -10,6 +10,11 @@
   --acid: #c7ff3d;
   --violet: #8b5dff;
   --shadow: 0 28px 90px rgba(0, 0, 0, 0.35);
+  --body-background:
+    radial-gradient(circle at var(--mx) var(--my), rgba(50, 230, 255, 0.18), transparent 22rem),
+    radial-gradient(circle at 84% 12%, rgba(255, 79, 216, 0.18), transparent 24rem),
+    radial-gradient(circle at 20% 82%, rgba(199, 255, 61, 0.1), transparent 26rem),
+    linear-gradient(180deg, #0a0714 0%, #130d24 46%, #090611 100%);
   color-scheme: dark;
   font-family:
     Inter,
@@ -19,6 +24,26 @@
     BlinkMacSystemFont,
     "Segoe UI",
     sans-serif;
+}
+
+:root[data-theme="light"] {
+  --ink: #17201d;
+  --paper: #f7f2e9;
+  --muted: #53605a;
+  --dim: #7a847d;
+  --line: rgba(23, 32, 29, 0.16);
+  --glass: rgba(23, 32, 29, 0.06);
+  --teal: #00bfae;
+  --ember: #ff007a;
+  --acid: #ffd600;
+  --violet: #6540d3;
+  --shadow: 0 24px 72px rgba(44, 35, 22, 0.15);
+  --body-background:
+    radial-gradient(circle at var(--mx) var(--my), rgba(0, 125, 143, 0.12), transparent 22rem),
+    radial-gradient(circle at 84% 12%, rgba(210, 47, 148, 0.1), transparent 24rem),
+    radial-gradient(circle at 20% 82%, rgba(85, 125, 0, 0.1), transparent 26rem),
+    linear-gradient(180deg, #f7f2e9 0%, #f0e8da 46%, #f8f5ee 100%);
+  color-scheme: light;
 }
 
 @view-transition {
@@ -37,11 +62,7 @@ body {
   --scroll: 0;
   --mx: 50vw;
   --my: 40vh;
-  background:
-    radial-gradient(circle at var(--mx) var(--my), rgba(50, 230, 255, 0.18), transparent 22rem),
-    radial-gradient(circle at 84% 12%, rgba(255, 79, 216, 0.18), transparent 24rem),
-    radial-gradient(circle at 20% 82%, rgba(199, 255, 61, 0.1), transparent 26rem),
-    linear-gradient(180deg, #0a0714 0%, #130d24 46%, #090611 100%);
+  background: var(--body-background);
   color: var(--ink);
   margin: 0;
   min-width: 320px;
@@ -336,7 +357,7 @@ body.ready .footer {
   border-bottom: 1px solid var(--line);
   display: grid;
   gap: 1rem;
-  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-columns: minmax(0, 1fr) auto auto;
   padding: 0.95rem clamp(1rem, 4vw, 3rem);
   position: sticky;
   top: 0;
@@ -443,6 +464,44 @@ body.ready .footer {
     transform 180ms ease;
   display: none;
   width: 2.3rem;
+}
+
+.appearance-toggle {
+  align-items: center;
+  background: var(--glass);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  cursor: pointer;
+  display: inline-flex;
+  height: 2.3rem;
+  justify-content: center;
+  transition:
+    border-color 180ms ease,
+    color 180ms ease,
+    transform 180ms ease;
+  width: 2.3rem;
+}
+
+.appearance-toggle svg {
+  fill: none;
+  height: 1rem;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+  width: 1rem;
+}
+
+.appearance-toggle:hover {
+  border-color: var(--acid);
+  color: var(--acid);
+  transform: rotate(18deg);
+}
+
+.appearance-toggle:focus-visible,
+.menu-button:focus-visible {
+  outline: 2px solid var(--acid);
+  outline-offset: 3px;
 }
 
 .menu-button span {
@@ -1777,6 +1836,88 @@ body.ready h1 > span:nth-child(4) {
   animation: trace 900ms ease-out forwards;
 }
 
+:root[data-theme="light"] .site-header {
+  background: rgba(247, 242, 233, 0.78);
+}
+
+:root[data-theme="light"] #hero-field {
+  background:
+    radial-gradient(circle at 52% 46%, rgba(0, 125, 143, 0.12), transparent 24rem),
+    linear-gradient(108deg, rgba(255, 255, 255, 0.76) 0%, rgba(238, 231, 219, 0.62) 46%, rgba(186, 173, 155, 0.88) 100%);
+}
+
+:root[data-theme="light"] .hero::before {
+  background:
+    linear-gradient(90deg, rgba(247, 242, 233, 0.94), rgba(247, 242, 233, 0.58) 43%, transparent),
+    linear-gradient(180deg, transparent 76%, rgba(247, 242, 233, 0.68));
+}
+
+:root[data-theme="light"] .hero-caption,
+:root[data-theme="light"] .rail {
+  color: rgba(23, 32, 29, 0.34);
+}
+
+:root[data-theme="light"] .work-card,
+:root[data-theme="light"] .item-card,
+:root[data-theme="light"] .contact-panel,
+:root[data-theme="light"] .not-found__frame,
+:root[data-theme="light"] .detail-hero,
+:root[data-theme="light"] .detail-card,
+:root[data-theme="light"] .detail-panel,
+:root[data-theme="light"] .resume-hero,
+:root[data-theme="light"] .resume-tech-panel,
+:root[data-theme="light"] .resume-timeline-card {
+  background-color: rgba(255, 255, 255, 0.38);
+}
+
+:root[data-theme="light"] .work-card::before,
+:root[data-theme="light"] .item-card::before {
+  background-color: rgba(225, 230, 221, 0.96);
+}
+
+:root[data-theme="light"] .work-card::after,
+:root[data-theme="light"] .item-card::after,
+:root[data-theme="light"] .shelf-list .item-card::after {
+  background: rgba(250, 248, 241, 0.84);
+}
+
+:root[data-theme="light"] .work-card:hover::after,
+:root[data-theme="light"] .work-card:focus-visible::after {
+  background:
+    radial-gradient(
+      circle at var(--card-x, 50%) var(--card-y, 50%),
+      rgba(85, 125, 0, 0.14),
+      transparent 16rem
+    ),
+    rgba(250, 248, 241, 0.9);
+}
+
+:root[data-theme="light"] .item-card:hover::after,
+:root[data-theme="light"] .item-card:focus-visible::after,
+:root[data-theme="light"] .shelf-list .item-card:hover::after,
+:root[data-theme="light"] .shelf-list .item-card:focus-visible::after {
+  background: rgba(250, 248, 241, 0.9);
+}
+
+:root[data-theme="light"] .command-dialog {
+  background: rgba(247, 242, 233, 0.94);
+}
+
+:root[data-theme="light"] .command-dialog::backdrop {
+  background: rgba(29, 35, 31, 0.28);
+}
+
+:root[data-theme="light"] .not-found__frame {
+  background:
+    radial-gradient(circle at 70% 42%, rgba(0, 125, 143, 0.13), transparent 20rem),
+    radial-gradient(circle at 18% 86%, rgba(210, 47, 148, 0.11), transparent 20rem),
+    rgba(255, 255, 255, 0.38);
+}
+
+:root[data-theme="light"] .not-found__number {
+  color: color-mix(in srgb, var(--ink), transparent 90%);
+}
+
 .reveal {
   opacity: 0.001;
   transform: translateY(2rem);
@@ -1808,7 +1949,7 @@ body.ready h1 > span:nth-child(4) {
   .site-header {
     gap: 0.75rem;
     grid-template-columns: minmax(0, 1fr);
-    padding-right: 4rem;
+    padding-right: 7rem;
   }
 
   .nav {
@@ -1834,8 +1975,20 @@ body.ready h1 > span:nth-child(4) {
     z-index: 45;
   }
 
+  .appearance-toggle {
+    position: absolute;
+    right: 4rem;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 45;
+  }
+
   .menu-button:hover {
     transform: translateY(-50%) rotate(8deg);
+  }
+
+  .appearance-toggle:hover {
+    transform: translateY(-50%) rotate(18deg);
   }
 
   .hero {

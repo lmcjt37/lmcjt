@@ -2,6 +2,19 @@ import type { Metadata, Viewport } from "next";
 
 import "../styles.css";
 
+const appearanceScript = `(() => {
+  try {
+    const theme = localStorage.getItem("theme");
+    if (theme === "light" || theme === "dark") {
+      document.documentElement.dataset.theme = theme;
+      document.querySelector('meta[name="theme-color"]')?.setAttribute(
+        "content",
+        theme === "light" ? "#f7f2e9" : "#101616",
+      );
+    }
+  } catch {}
+})();`;
+
 export const metadata: Metadata = {
   title: "Luke Taylor - Software Engineer",
   description:
@@ -23,7 +36,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: appearanceScript }} />
+      </head>
       <body>{children}</body>
     </html>
   );

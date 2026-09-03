@@ -1,3 +1,5 @@
+import { AppearanceToggle } from "./AppearanceToggle";
+
 type SiteHeaderProps = {
   brandHref?: string;
   commandButton?: boolean;
@@ -41,6 +43,7 @@ export function SiteHeader({
           <span>05</span>Contact
         </a>
       </nav>
+      <AppearanceToggle />
       <button
         className="menu-button"
         id={commandButton ? "command-button" : undefined}
