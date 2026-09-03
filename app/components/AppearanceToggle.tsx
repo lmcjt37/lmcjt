@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useSyncExternalStore } from "react";
 
 type Theme = "dark" | "light";
 
@@ -9,24 +9,32 @@ const themeColor = {
   light: "#f7f2e9",
 };
 
-export function AppearanceToggle() {
-  const [theme, setTheme] = useState<Theme>("dark");
+const getSavedTheme = (): Theme => {
+  const savedTheme = window.localStorage.getItem("theme");
+  return savedTheme === "light" || savedTheme === "dark" ? savedTheme : "dark";
+};
 
-  useEffect(() => {
-    const savedTheme = window.localStorage.getItem("theme");
-    if (savedTheme === "light" || savedTheme === "dark") {
-      setTheme(savedTheme);
-    }
-  }, []);
+const subscribeToTheme = (onThemeChange: () => void) => {
+  window.addEventListener("storage", onThemeChange);
+  window.addEventListener("themechange", onThemeChange);
+
+  return () => {
+    window.removeEventListener("storage", onThemeChange);
+    window.removeEventListener("themechange", onThemeChange);
+  };
+};
+
+export function AppearanceToggle() {
+  const theme = useSyncExternalStore(subscribeToTheme, getSavedTheme, () => "dark");
 
   const toggleTheme = () => {
     const nextTheme = theme === "dark" ? "light" : "dark";
     document.documentElement.dataset.theme = nextTheme;
     window.localStorage.setItem("theme", nextTheme);
+    window.dispatchEvent(new Event("themechange"));
     document
       .querySelector('meta[name="theme-color"]')
       ?.setAttribute("content", themeColor[nextTheme]);
-    setTheme(nextTheme);
   };
 
   const label = theme === "dark" ? "Switch to light theme" : "Switch to dark theme";
