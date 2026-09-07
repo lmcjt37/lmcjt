@@ -1525,10 +1525,21 @@ body.ready h1 > span:nth-child(4) {
   margin: 0 0 0.9rem;
 }
 
+.essay-body :is(h1, h2, h3, h4, h5, h6) {
+  padding-top: 1rem;
+}
+
 .essay-body p {
   color: var(--muted);
   line-height: 1.75;
   margin: 0;
+  padding: 0.25rem 0;
+}
+
+.essay-body ul li {
+  color: var(--muted);
+  line-height: 1.75;
+  padding: 0.25rem 0;
 }
 
 .essay-body p + p {
