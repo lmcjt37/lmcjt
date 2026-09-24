@@ -111,7 +111,7 @@ export default function HomePage() {
               <h2>Things I would share across the table.</h2>
             </div>
             <div className="shelf-list" id="shelf-list">
-              {shelfItems.slice(0, 3).map((item) => (
+              {shelfItems.slice(0, 6).map((item) => (
                 <HomeItemCard item={item} key={item.href} />
               ))}
             </div>

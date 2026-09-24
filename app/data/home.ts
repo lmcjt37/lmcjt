@@ -26,18 +26,12 @@ export const workItems: WorkItem[] = getFeaturedContent(projects).map((item) => 
 const featuredNotes = getFeaturedContent(notes).map<HomeListItem>((item) => ({
   type: item.type,
   title: item.title,
-  text: "Early thoughts on using AI seriously in engineering work without handing over judgment.",
+  text: item.description,
   href: item.route,
 }));
 
 export const noteItems: HomeListItem[] = [
   ...featuredNotes,
-  {
-    type: "Placeholder",
-    title: "More notes, soon",
-    text: "A place for working thoughts on mobile engineering, product tradeoffs, and what holds up in practice.",
-    href: "/notes/",
-  },
   {
     type: "Placeholder",
     title: "Still scribbling",
@@ -49,6 +43,6 @@ export const noteItems: HomeListItem[] = [
 export const shelfItems: HomeListItem[] = getFeaturedContent(shelf).map((item) => ({
   type: item.type,
   title: item.title,
-  text: "A shelf note in progress.",
+  text: item.description,
   href: item.route,
 }));
