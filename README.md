@@ -19,7 +19,7 @@ The app exports to static files for GitHub Pages.
 ## Structure
 
 - `app/` - Next.js App Router routes, components, data, and MDX content
-- `app/content/` - MDX content modules for projects, notes, and shelf entries
+- `app/content/` - MDX content modules for projects, articles, and shelf entries
 - `app/data/` - typed metadata used by home cards, archives, and slug routes
 - `public/` - static assets served by Next.js
 - `styles.css` - shared visual system, layout, colour palette, and motion
@@ -62,12 +62,12 @@ GitHub Pages deployment is handled by `.github/workflows/deploy.yml`.
 
 In the repository settings, configure Pages to use GitHub Actions as the source. Pushing to `main` runs `npm ci`, `npm run build`, uploads `out/`, and deploys it.
 
-## Content notes
+## Content
 
 Current content includes:
 
 - Projects, a collection of various side hustles.
-- Notes, an archive of scribbles and thoughts.
+- Articles, an archive of scribbles and thoughts.
 - Shelf, a list of books, links and other references.
 
-Content metadata lives in `app/data/content.ts`. Long-form project, notes, and shelf copy lives in MDX files under `app/content/`.
+Content metadata lives in `app/data/content.ts`. Long-form project, article, and shelf copy lives in MDX files under `app/content/`.

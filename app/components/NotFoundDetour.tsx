@@ -16,7 +16,7 @@ export function NotFoundDetour() {
   }, []);
 
   const sectionLabel =
-    item.section === "projects" ? "Project" : item.section === "notes" ? "Note" : "Shelf";
+    item.section === "projects" ? "Project" : item.section === "articles" ? "Article" : "Shelf";
 
   return (
     <a className="not-found__detour" href={item.route}>

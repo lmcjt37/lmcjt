@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 import { WritingDetailPage } from "../../components/DetailPages";
-import { noteContent } from "../../content/registry";
-import { getContentBySlug, notes } from "../../data/content";
+import { articleContent } from "../../content/registry";
+import { articles, getContentBySlug } from "../../data/content";
 
 type PageProps = {
   params: Promise<{
@@ -14,38 +14,38 @@ type PageProps = {
 export const dynamicParams = false;
 
 export function generateStaticParams() {
-  return notes.map((item) => ({
+  return articles.map((item) => ({
     slug: item.slug,
   }));
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
-  const note = getContentBySlug(notes, slug);
+  const article = getContentBySlug(articles, slug);
 
-  if (!note) {
+  if (!article) {
     return {};
   }
 
   return {
-    title: `${note.title} - Luke Taylor`,
-    description: note.description,
+    title: `${article.title} - Luke Taylor`,
+    description: article.description,
   };
 }
 
-export default async function NotePage({ params }: PageProps) {
+export default async function ArticlePage({ params }: PageProps) {
   const { slug } = await params;
-  const note = getContentBySlug(notes, slug);
+  const article = getContentBySlug(articles, slug);
 
-  if (!note) {
+  if (!article) {
     notFound();
   }
 
-  const content = noteContent[note.slug];
+  const content = articleContent[article.slug];
 
   if (!content) {
     notFound();
   }
 
-  return <WritingDetailPage content={content} item={note} />;
+  return <WritingDetailPage content={content} item={article} />;
 }

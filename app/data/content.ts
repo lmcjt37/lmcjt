@@ -1,4 +1,4 @@
-export type ContentSection = "projects" | "notes" | "shelf";
+export type ContentSection = "projects" | "articles" | "shelf";
 
 export type ContentRoute = `/${ContentSection}/${string}/`;
 
@@ -22,8 +22,8 @@ export type ProjectItem = BaseContentItem & {
   nextSlug?: string;
 };
 
-export type NoteItem = BaseContentItem & {
-  section: "notes";
+export type ArticleItem = BaseContentItem & {
+  section: "articles";
   type: "Essay";
   readTime: string;
   chips: string[];
@@ -36,7 +36,7 @@ export type ShelfItem = BaseContentItem & {
   externalUrl?: string;
 };
 
-export type ContentItem = ProjectItem | NoteItem | ShelfItem;
+export type ContentItem = ProjectItem | ArticleItem | ShelfItem;
 
 export const projects = [
   {
@@ -95,15 +95,15 @@ export const projects = [
   },
 ] satisfies ProjectItem[];
 
-export const notes = [
+export const articles = [
   {
-    section: "notes",
+    section: "articles",
     slug: "death-spiral",
     title: "Death spiral",
     description:
       "Death spiral by Luke Taylor: AI can amplify engineering, but automated output risks eroding context, judgment, and ownership.",
     date: "2026-09-24",
-    route: "/notes/death-spiral/",
+    route: "/articles/death-spiral/",
     listed: true,
     featured: true,
     type: "Essay",
@@ -111,20 +111,20 @@ export const notes = [
     chips: ["AI", "Engineering", "Opinion"],
   },
   {
-    section: "notes",
+    section: "articles",
     slug: "the-ai-story-so-far",
     title: "The AI story so far...",
     description:
       "The AI story so far... by Luke Taylor: from skepticism to regular use, with a human-in-the-loop view of AI in engineering.",
     date: "2026-09-01",
-    route: "/notes/the-ai-story-so-far/",
+    route: "/articles/the-ai-story-so-far/",
     listed: true,
     featured: true,
     type: "Essay",
     readTime: "2 minute 30 second read",
     chips: ["AI", "Engineering", "Learning"],
   },
-] satisfies NoteItem[];
+] satisfies ArticleItem[];
 
 export const shelf = [
   {
@@ -242,7 +242,7 @@ export const shelf = [
   },
 ] satisfies ShelfItem[];
 
-export const allContent = [...projects, ...notes, ...shelf] satisfies ContentItem[];
+export const allContent = [...projects, ...articles, ...shelf] satisfies ContentItem[];
 
 export function getContentBySlug<TContent extends ContentItem>(
   items: readonly TContent[],

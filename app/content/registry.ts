@@ -4,10 +4,10 @@ import cosmographer from "./projects/cosmographer.mdx";
 import { detail as cosmographerDetail } from "./projects/cosmographer.mdx";
 import skills from "./projects/skills.mdx";
 import { detail as skillsDetail } from "./projects/skills.mdx";
-import theAiStorySoFar from "./notes/the-ai-story-so-far.mdx";
-import { detail as theAiStorySoFarDetail } from "./notes/the-ai-story-so-far.mdx";
-import deathSpiral from "./notes/death-spiral.mdx";
-import { detail as deathSpiralDetail } from "./notes/death-spiral.mdx";
+import theAiStorySoFar from "./articles/the-ai-story-so-far.mdx";
+import { detail as theAiStorySoFarDetail } from "./articles/the-ai-story-so-far.mdx";
+import deathSpiral from "./articles/death-spiral.mdx";
+import { detail as deathSpiralDetail } from "./articles/death-spiral.mdx";
 import artemis from "./shelf/artemis.mdx";
 import { detail as artemisDetail } from "./shelf/artemis.mdx";
 import duneSaga from "./shelf/dune-saga.mdx";
@@ -43,7 +43,7 @@ export const projectContent: Record<string, ProjectContentModule> = {
   },
 };
 
-export const noteContent: Record<string, WritingContentModule> = {
+export const articleContent: Record<string, WritingContentModule> = {
   "death-spiral": {
     default: deathSpiral,
     detail: deathSpiralDetail,
