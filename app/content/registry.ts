@@ -6,12 +6,18 @@ import skills from "./projects/skills.mdx";
 import { detail as skillsDetail } from "./projects/skills.mdx";
 import theAiStorySoFar from "./notes/the-ai-story-so-far.mdx";
 import { detail as theAiStorySoFarDetail } from "./notes/the-ai-story-so-far.mdx";
+import deathSpiral from "./notes/death-spiral.mdx";
+import { detail as deathSpiralDetail } from "./notes/death-spiral.mdx";
 import artemis from "./shelf/artemis.mdx";
 import { detail as artemisDetail } from "./shelf/artemis.mdx";
 import duneSaga from "./shelf/dune-saga.mdx";
 import { detail as duneSagaDetail } from "./shelf/dune-saga.mdx";
 import icqrTree from "./shelf/icqr-tree.mdx";
 import { detail as icqrTreeDetail } from "./shelf/icqr-tree.mdx";
+import slopGrenade from "./shelf/slop-grenade.mdx";
+import { detail as slopGrenadeDetail } from "./shelf/slop-grenade.mdx";
+import techExtinctions from "./shelf/tech-extinctions.mdx";
+import { detail as techExtinctionsDetail } from "./shelf/tech-extinctions.mdx";
 import linkLowdown from "./shelf/link-lowdown.mdx";
 import { detail as linkLowdownDetail } from "./shelf/link-lowdown.mdx";
 import projectHailMary from "./shelf/project-hail-mary.mdx";
@@ -38,6 +44,10 @@ export const projectContent: Record<string, ProjectContentModule> = {
 };
 
 export const noteContent: Record<string, WritingContentModule> = {
+  "death-spiral": {
+    default: deathSpiral,
+    detail: deathSpiralDetail,
+  },
   "the-ai-story-so-far": {
     default: theAiStorySoFar,
     detail: theAiStorySoFarDetail,
@@ -68,6 +78,14 @@ export const shelfContent: Record<string, WritingContentModule> = {
   "ready-player-one-and-two": {
     default: readyPlayerOneAndTwo,
     detail: readyPlayerOneAndTwoDetail,
+  },
+  "slop-grenade": {
+    default: slopGrenade,
+    detail: slopGrenadeDetail,
+  },
+  "tech-extinctions": {
+    default: techExtinctions,
+    detail: techExtinctionsDetail,
   },
   "the-martian": {
     default: theMartian,

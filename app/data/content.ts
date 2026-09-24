@@ -98,6 +98,20 @@ export const projects = [
 export const notes = [
   {
     section: "notes",
+    slug: "death-spiral",
+    title: "Death spiral",
+    description:
+      "Death spiral by Luke Taylor: AI can amplify engineering, but automated output risks eroding context, judgment, and ownership.",
+    date: "2026-09-24",
+    route: "/notes/death-spiral/",
+    listed: true,
+    featured: false,
+    type: "Essay",
+    readTime: "6 minute read",
+    chips: ["AI", "Engineering", "Opinion"],
+  },
+  {
+    section: "notes",
     slug: "the-ai-story-so-far",
     title: "The AI story so far...",
     description:
@@ -113,6 +127,32 @@ export const notes = [
 ] satisfies NoteItem[];
 
 export const shelf = [
+  {
+    section: "shelf",
+    slug: "tech-extinctions",
+    title: "I Have Survived 4 Tech Extinctions Since 2002. And AI Is Number 4",
+    description:
+      "I Have Survived 4 Tech Extinctions Since 2002. And AI Is Number 4, shared by Luke Taylor.",
+    date: "2026-09-24",
+    route: "/shelf/tech-extinctions/",
+    listed: true,
+    featured: false,
+    type: "Link",
+    externalUrl:
+      "https://freedium-mirror.cfd/https://levelup.gitconnected.com/i-have-survived-4-tech-extinctions-since-2002-and-ai-is-number-4-c4ced4852026",
+  },
+  {
+    section: "shelf",
+    slug: "slop-grenade",
+    title: "Slop Grenade",
+    description: "Slop Grenade, shared by Luke Taylor.",
+    date: "2026-09-24",
+    route: "/shelf/slop-grenade/",
+    listed: true,
+    featured: false,
+    type: "Link",
+    externalUrl: "https://noslopgrenade.com/",
+  },
   {
     section: "shelf",
     slug: "dune-saga",
