@@ -1,22 +1,22 @@
 import type { Metadata } from "next";
 
 import { ArchivePage } from "../components/ArchivePage";
-import { notes } from "../data/content";
+import { articles } from "../data/content";
 
 export const metadata: Metadata = {
-  title: "Notes - Luke Taylor",
+  title: "Articles - Luke Taylor",
   description:
-    "Notes by Luke Taylor: essays and working thoughts on AI, mobile engineering, product, and craft.",
+    "Articles by Luke Taylor: essays and working thoughts on AI, mobile engineering, product, and craft.",
 };
 
-export default function NotesPage() {
+export default function ArticlesPage() {
   return (
     <ArchivePage
-      backHref="/#notes"
+      backHref="/#articles"
       description="This is where I collect longer-form thinking around AI, mobile engineering, product tradeoffs, and the small details that shape how software feels in practice."
-      items={notes}
+      items={articles}
       title="A chronological list of essays, drafts, and working thoughts."
-      type="notes"
+      type="articles"
     />
   );
 }

@@ -754,7 +754,7 @@ body.ready h1 > span:nth-child(4) {
 
 .panel,
 .work-panel,
-.notes-shelf,
+.articles-shelf,
 .contact-panel {
   margin-left: clamp(2rem, 8vw, 7rem);
   position: relative;
@@ -797,7 +797,7 @@ body.ready h1 > span:nth-child(4) {
 }
 
 .work-panel,
-.notes-shelf,
+.articles-shelf,
 .contact-panel {
   padding-block: clamp(3rem, 7vw, 6rem);
 }
@@ -1024,7 +1024,7 @@ body.ready h1 > span:nth-child(4) {
   padding: 0.42rem 0.56rem;
 }
 
-.note-list,
+.article-list,
 .shelf-list {
   display: grid;
   gap: 0.85rem;
@@ -1546,6 +1546,28 @@ body.ready h1 > span:nth-child(4) {
   margin-top: 1rem;
 }
 
+.essay-body a:not(.essay-link) {
+  color: var(--violet);
+  text-decoration-line: underline;
+  text-decoration-color: var(--violet);
+  text-decoration-thickness: 0.14em;
+  text-underline-offset: 0.16em;
+  transition:
+    color 180ms ease,
+    text-decoration-color 180ms ease;
+}
+
+.essay-body a:not(.essay-link):hover {
+  color: var(--ink);
+  text-decoration-color: var(--violet);
+}
+
+.essay-body a:not(.essay-link):focus-visible {
+  border-radius: 0.12rem;
+  outline: 2px solid var(--violet);
+  outline-offset: 0.2rem;
+}
+
 .essay-link {
   align-items: center;
   color: var(--teal);
@@ -2017,7 +2039,7 @@ body.ready h1 > span:nth-child(4) {
 
   .section-title,
   .work-card,
-  .note-list,
+  .article-list,
   .shelf-list,
   .detail-grid,
   .detail-body,
@@ -2114,7 +2136,7 @@ body.ready h1 > span:nth-child(4) {
 
   .panel,
   .work-panel,
-  .notes-shelf,
+  .articles-shelf,
   .contact-panel {
     margin-left: 0;
   }

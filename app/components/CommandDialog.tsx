@@ -23,11 +23,11 @@ export function CommandDialog({ homeNav = true }: CommandDialogProps) {
             <span>01</span>Work
           </a>
           <a
-            href={`${homePrefix}#notes`}
+            href={`${homePrefix}#articles`}
             data-command-link
             data-transition-link={!homeNav || undefined}
           >
-            <span>02</span>Notes
+            <span>02</span>Articles
           </a>
           <a
             href={`${homePrefix}#shelf`}

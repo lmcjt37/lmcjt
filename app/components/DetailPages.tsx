@@ -1,7 +1,7 @@
 import {
   getContentBySlug,
   projects,
-  type NoteItem,
+  type ArticleItem,
   type ProjectItem,
   type ShelfItem,
 } from "../data/content";
@@ -84,22 +84,26 @@ export function WritingDetailPage({
   item,
 }: {
   content: WritingContentModule;
-  item: NoteItem | ShelfItem;
+  item: ArticleItem | ShelfItem;
 }) {
-  const isNote = item.section === "notes";
+  const isArticle = item.section === "articles";
   const Content = content.default;
 
   return (
     <PageChrome detailPage>
       <main id="main">
         <section className="detail-hero reveal">
-          <a className="detail-back" href={isNote ? "/notes/" : "/shelf/"} data-transition-link>
-            Back to {isNote ? "notes" : "shelf"}
+          <a
+            className="detail-back"
+            href={isArticle ? "/articles/" : "/shelf/"}
+            data-transition-link
+          >
+            Back to {isArticle ? "articles" : "shelf"}
           </a>
           <div className="detail-copy essay-copy">
             <p className="label">{dateFormatter.format(new Date(`${item.date}T00:00:00`))}</p>
             <div className="essay-meta">
-              <span>{isNote ? item.readTime : item.type}</span>
+              <span>{isArticle ? item.readTime : item.type}</span>
               {item.chips?.length ? (
                 <div className="essay-chips" aria-hidden="true">
                   {item.chips.map((chip) => (

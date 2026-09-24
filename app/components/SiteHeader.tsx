@@ -30,8 +30,8 @@ export function SiteHeader({
         <a href={`${homePrefix}#work`} data-transition-link={!homeNav || undefined}>
           <span>01</span>Work
         </a>
-        <a href={`${homePrefix}#notes`} data-transition-link={!homeNav || undefined}>
-          <span>02</span>Notes
+        <a href={`${homePrefix}#articles`} data-transition-link={!homeNav || undefined}>
+          <span>02</span>Articles
         </a>
         <a href={`${homePrefix}#shelf`} data-transition-link={!homeNav || undefined}>
           <span>03</span>Shelf

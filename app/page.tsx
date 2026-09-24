@@ -1,7 +1,7 @@
 import { HomeEffects } from "./components/HomeEffects";
 import { HomeItemCard, WorkCard } from "./components/HomeCards";
 import { PageChrome } from "./components/PageChrome";
-import { noteItems, shelfItems, workItems } from "./data/home";
+import { articleItems, shelfItems, workItems } from "./data/home";
 
 export default function HomePage() {
   return (
@@ -83,22 +83,22 @@ export default function HomePage() {
             </div>
           </section>
 
-          <section className="notes-shelf reveal" id="notes">
+          <section className="articles-shelf reveal" id="articles">
             <div className="section-title">
-              <a className="label section-title-link" href="/notes/" data-transition-link>
-                <span>02 / Notes</span>
+              <a className="label section-title-link" href="/articles/" data-transition-link>
+                <span>02 / Articles</span>
                 <span aria-hidden="true">→</span>
               </a>
               <h2>Writing space for the thinking behind the work.</h2>
             </div>
-            <div className="note-list" id="note-list">
-              {noteItems.map((item) => (
+            <div className="article-list" id="article-list">
+              {articleItems.map((item) => (
                 <HomeItemCard item={item} key={item.title} />
               ))}
             </div>
           </section>
 
-          <section className="notes-shelf reveal" id="shelf">
+          <section className="articles-shelf reveal" id="shelf">
             <div className="section-title">
               <a
                 className="label section-title-link section-title-link--shelf"

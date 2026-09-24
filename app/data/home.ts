@@ -1,4 +1,4 @@
-import { getFeaturedContent, notes, projects, shelf } from "./content";
+import { articles, getFeaturedContent, projects, shelf } from "./content";
 
 export type WorkItem = {
   title: string;
@@ -23,20 +23,20 @@ export const workItems: WorkItem[] = getFeaturedContent(projects).map((item) => 
   href: item.route,
 }));
 
-const featuredNotes = getFeaturedContent(notes).map<HomeListItem>((item) => ({
+const featuredArticles = getFeaturedContent(articles).map<HomeListItem>((item) => ({
   type: item.type,
   title: item.title,
   text: item.description,
   href: item.route,
 }));
 
-export const noteItems: HomeListItem[] = [
-  ...featuredNotes,
+export const articleItems: HomeListItem[] = [
+  ...featuredArticles,
   {
     type: "Placeholder",
     title: "Still scribbling",
     text: "Short essays, sharper opinions, and the occasional useful detour will live here as the archive grows.",
-    href: "/notes/",
+    href: "/articles/",
   },
 ];
 

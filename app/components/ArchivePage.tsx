@@ -1,13 +1,13 @@
-import type { NoteItem, ShelfItem } from "../data/content";
+import type { ArticleItem, ShelfItem } from "../data/content";
 import { DetailEffects } from "./DetailEffects";
 import { PageChrome } from "./PageChrome";
 
 type ArchivePageProps = {
   backHref: string;
   description: string;
-  items: readonly (NoteItem | ShelfItem)[];
+  items: readonly (ArticleItem | ShelfItem)[];
   title: string;
-  type: "notes" | "shelf";
+  type: "articles" | "shelf";
 };
 
 const monthFormatter = new Intl.DateTimeFormat("en-US", {
