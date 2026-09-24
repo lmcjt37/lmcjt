@@ -30,6 +30,16 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: `${article.title} - Luke Taylor`,
     description: article.description,
+    openGraph: {
+      title: article.title,
+      description: article.description,
+      images: ["/assets/social-card.png"],
+    },
+    twitter: {
+      title: article.title,
+      description: article.description,
+      images: ["/assets/social-card.png"],
+    },
   };
 }
 
