@@ -16,11 +16,35 @@ const appearanceScript = `(() => {
 })();`;
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://lmcjt.dev"),
   title: "Luke Taylor - Software Engineer",
   description:
     "Luke Taylor is a software engineer focused on developer experience, product thinking, and memorable customer details.",
   icons: {
     icon: "/favicon.svg",
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_GB",
+    siteName: "Luke Taylor",
+    title: "Luke Taylor - Software Engineer",
+    description:
+      "Luke Taylor is a software engineer focused on developer experience, product thinking, and memorable customer details.",
+    images: [
+      {
+        url: "/assets/social-card.png",
+        width: 1730,
+        height: 909,
+        alt: "An abstract violet, cyan, and acid-green digital horizon.",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Luke Taylor - Software Engineer",
+    description:
+      "Luke Taylor is a software engineer focused on developer experience, product thinking, and memorable customer details.",
+    images: ["/assets/social-card.png"],
   },
 };
 
