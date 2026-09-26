@@ -27,7 +27,7 @@ export function ArchivePage({ backHref, description, items, title, type }: Archi
   return (
     <PageChrome detailPage>
       <main id="main">
-        <section className="detail-hero reveal">
+        <section className="detail-hero reveal visible">
           <a className="detail-back" href={backHref} data-transition-link>
             Back to home
           </a>

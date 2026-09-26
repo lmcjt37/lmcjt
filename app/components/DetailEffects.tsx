@@ -71,12 +71,16 @@ export function DetailEffects() {
               }
             });
           },
-          { rootMargin: "0px 0px -12% 0px", threshold: 0.08 },
+          { rootMargin: "0px 0px -12% 0px", threshold: 0 },
         );
 
-    if (revealObserver) {
-      document.querySelectorAll(".reveal").forEach((element) => revealObserver.observe(element));
-    }
+    document.querySelectorAll(".reveal").forEach((element) => {
+      if (prefersReducedMotion) {
+        element.classList.add("visible");
+      } else {
+        revealObserver?.observe(element);
+      }
+    });
 
     const transitionHandlers = Array.from(
       document.querySelectorAll<HTMLAnchorElement>("[data-transition-link]"),

@@ -263,7 +263,7 @@ export function HomeEffects() {
           }
         });
       },
-      { rootMargin: "0px 0px -14% 0px", threshold: 0.1 },
+      { rootMargin: "0px 0px -14% 0px", threshold: 0 },
     );
 
     document.querySelectorAll(".reveal").forEach((element) => revealObserver.observe(element));

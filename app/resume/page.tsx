@@ -13,7 +13,7 @@ export default function ResumePage() {
   return (
     <PageChrome detailPage>
       <main id="main" className="resume-page">
-        <section className="resume-hero reveal">
+        <section className="resume-hero reveal visible">
           <a className="detail-back" href="/#contact" data-transition-link>
             Back to contact
           </a>
