@@ -45,7 +45,7 @@ export default function HomePage() {
             <span>spark</span>
           </aside>
 
-          <section className="panel thesis reveal">
+          <section className="panel thesis reveal visible">
             <p className="label">Point of view</p>
             <h2>Useful products come from clear thinking and strong execution.</h2>
             <p>

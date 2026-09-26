@@ -26,7 +26,7 @@ export function ProjectDetailPage({ content, project }: ProjectDetailPageProps) 
   return (
     <PageChrome detailPage>
       <main id="main">
-        <section className="detail-hero reveal">
+        <section className="detail-hero reveal visible">
           <a className="detail-back" href="/#work" data-transition-link>
             Back to work
           </a>
@@ -92,7 +92,7 @@ export function WritingDetailPage({
   return (
     <PageChrome detailPage>
       <main id="main">
-        <section className="detail-hero reveal">
+        <section className="detail-hero reveal visible">
           <a
             className="detail-back"
             href={isArticle ? "/articles/" : "/shelf/"}
