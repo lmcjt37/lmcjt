@@ -101,8 +101,7 @@ export const articles = [
     section: "articles",
     slug: "making-the-switch",
     title: "Making the switch",
-    description:
-      "How I transitioned from IDE to ADE, and why I'm trying not to look back.",
+    description: "How I transitioned from IDE to ADE, and why I'm trying not to look back.",
     date: "2026-09-30",
     route: "/articles/making-the-switch/",
     listed: true,
