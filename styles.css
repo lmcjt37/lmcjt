@@ -1546,6 +1546,16 @@ body.ready h1 > span:nth-child(4) {
   margin-top: 1rem;
 }
 
+.essay-body blockquote {
+  border-left: 2px solid var(--violet);
+  margin: 1.25rem 0;
+  padding: 0.35rem 0 0.35rem 1.2rem;
+}
+
+.essay-body blockquote p {
+  color: color-mix(in srgb, var(--ink), var(--muted) 30%);
+}
+
 .essay-body a:not(.essay-link) {
   color: var(--violet);
   text-decoration-line: underline;

@@ -1,0 +1,62 @@
+export const detail = {
+  excerpt:
+    "When Google fumbles the ball what does it all mean, and assessing the impact and fallout.",
+};
+
+On Monday 28 September, a backend change caused Firebase's iOS SDK to crash apps on launch. Thousands of apps use Firebase in one form or another, which makes them dependent on its maintainers not sending breaking behaviour into production without the right belt and braces.
+
+For mobile apps, there is very little a team can do immediately when that happens. You cannot ship a hotfix to a device whose app will not open. Caching makes it worse: some devices may recover quickly while others can remain stuck in a crash loop for hours. Not ideal if you are in the middle of nowhere and the app you need decides to have a mental breakdown. That is supposed to be reserved for us humans.
+
+## What happened
+
+The problem was in Firebase Analytics. A backend change appears to have returned a malformed response from the SDK's experiments endpoint, causing a nil-key crash inside the SDK during launch, as [reported by developers](https://github.com/firebase/firebase-ios-sdk/issues/16728). No client-side change was needed for the impact to spread. The only silver lining, if you can call it that, was that it affected iOS only.
+
+Crashes began at 17:41 PDT on 28 September (00:41 UTC on the 29th). A fix went out at 19:52 PDT, just over two hours later.
+
+Google's [incident update](https://github.com/firebase/firebase-ios-sdk/issues/16728#issuecomment-5884287771) confirmed that an incorrectly formatted payload received by Google Analytics for Firebase iOS caused launch crashes. That is a summary rather than a full postmortem, and the fallout did not end when the fix shipped: developer dashboards and support channels were still dealing with delayed data and affected users.
+
+The surprising part is not that a mistake happened. It is that a company with Google's engineering reputation let a remotely supplied payload turn into a launch-time crash, with no visible early warning and a status page that lagged behind the incident. Firebase sits under a huge amount of software. Its reliability bar should reflect that.
+
+Gergely Orosz of [The Pragmatic Engineer](https://www.pragmaticengineer.com/) made the accountability point well in [his thread on X](https://x.com/GergelyOrosz/status/2104825886922911981): outages like this have a real cost for the companies relying on the service, including customers they may never get back. Google will likely absorb the reputational hit. Smaller teams downstream cannot always do the same.
+
+## What does it mean?
+
+We do not yet know how much AI, if any, contributed to this incident. It may turn out to be a straightforward process failure. But it is still worth asking the question as companies push harder for AI involvement in delivery, and Google is one of the most visible examples of that direction of travel.
+
+If a company with the quality bar we expect from Google can make this sort of mistake, what happened? And what should the rest of us learn from it?
+
+### Why was this not caught before production?
+
+Was there an integration test missing, a rollout guardrail that did not exist, or a contract that was treated as safer than it was? Those questions matter regardless of how the change was written.
+
+The AI angle is less certain, but it is hard to ignore. Are teams leaning too heavily on AI review to approve code that moves automatically towards production? Are large, generated diffs becoming [slop grenades](/shelf/slop-grenade/) that humans approve too quickly, or that agent reviewers cannot meaningfully reason about? Code review may be changing, but we have not built a complete replacement for the context and challenge a good human review provides, imperfect as it can be.
+
+### Where was the observability?
+
+The incident also asks questions about detection and urgency. A third-party backend response was able to prevent customers' apps from opening. That should be a high-severity signal, not a problem discovered only after developer dashboards catch fire.
+
+It is possible to imagine the usual failure modes: dashboards focused on happy paths, alerts that measure the wrong thing, automation that does not trigger, or teams trusting the systems around them a little too much. AI can make each of those failures easier to scale if we let it generate monitoring around the obvious metrics while the awkward edges go unobserved. To be fair, those failures existed long before AI. The risk is that automation makes us more confident in incomplete coverage.
+
+The postmortem will matter. It should explain the technical sequence, the impact, the delayed detection, and the controls that failed. It will also show whether AI had a meaningful role, or whether this was simply human error and weak process. Either way, the lessons should not be optional for a platform with this much reach.
+
+## The blast radius is the lesson
+
+This will not stop the march towards more automation. It should, however, change how we think about the safeguards around it.
+
+We have already seen capable agents behave in unexpected ways; OpenAI described its Hugging Face incident as a ["warning shot"](https://openai.com/index/hugging-face-incident-and-the-road-ahead/) and stressed that security and monitoring need to improve with capability. The same instinct applies here: automation is useful, but it needs boundaries that assume it can be wrong.
+
+For SDK maintainers, a malformed remote response should be recoverable. Validate it, fail safely, and do not let an analytics or experimentation path take the host application down at launch. For app teams, the equivalent question is whether a third-party SDK is being given too much authority during the most fragile part of the app lifecycle.
+
+## Final thoughts
+
+Whatever the postmortem says, I do not expect it to alter the direction of travel. I will keep using AI as I do now: with caution and conscious effort.
+
+I still run manual checks locally and question an agent's output thoroughly. That lets me shape the code I want while retaining the context needed to own it. I will review as much code as I can for as long as review remains realistic.
+
+As I wrote in [Death spiral](/articles/death-spiral/), you should be able to explain your changes and take ownership of them, whether you used AI throughout or not. This feels like another reminder that the human has not been replaced yet. Due diligence may look like a bottleneck, but it remains useful.
+
+- **Keep PRs small.** Granular changes are easier to understand and review, for humans and AI alike.
+- **Treat rollout and observability as part of the feature.** Staged rollout, real crash alerts, and meaningful kill switches reduce the blast radius when something slips through.
+- **Code defensively.** SDKs should handle bad remote data gracefully, and apps should avoid letting non-critical dependencies own the launch path.
+
+Keeping a human in the loop as a sentinel still makes sense. Not because people never make mistakes, but because the last layer of judgment should know what can fail, who it affects, and how to stop it.

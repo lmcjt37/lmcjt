@@ -27,6 +27,7 @@ export type ArticleItem = BaseContentItem & {
   type: "Essay";
   readTime: string;
   chips: string[];
+  socialImage?: string;
 };
 
 export type ShelfItem = BaseContentItem & {
@@ -96,6 +97,21 @@ export const projects = [
 ] satisfies ProjectItem[];
 
 export const articles = [
+  {
+    section: "articles",
+    slug: "playing-with-firebase",
+    title: "Playing with fire(base)",
+    description:
+      "When Google fumbles the ball what does it all mean, and assessing the impact and fallout.",
+    date: "2026-09-30",
+    route: "/articles/playing-with-firebase/",
+    listed: true,
+    featured: true,
+    type: "Essay",
+    readTime: "6 minute read",
+    chips: ["AI", "Observability", "Opinion"],
+    socialImage: "/assets/playing-with-firebase-social.png",
+  },
   {
     section: "articles",
     slug: "death-spiral",
