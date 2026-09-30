@@ -27,18 +27,20 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     return {};
   }
 
+  const socialImage = article.socialImage ?? "/assets/social-card.png";
+
   return {
     title: `${article.title} - Luke Taylor`,
     description: article.description,
     openGraph: {
       title: article.title,
       description: article.description,
-      images: ["/assets/social-card.png"],
+      images: [socialImage],
     },
     twitter: {
       title: article.title,
       description: article.description,
-      images: ["/assets/social-card.png"],
+      images: [socialImage],
     },
   };
 }

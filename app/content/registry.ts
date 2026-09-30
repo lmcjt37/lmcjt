@@ -8,6 +8,8 @@ import theAiStorySoFar from "./articles/the-ai-story-so-far.mdx";
 import { detail as theAiStorySoFarDetail } from "./articles/the-ai-story-so-far.mdx";
 import deathSpiral from "./articles/death-spiral.mdx";
 import { detail as deathSpiralDetail } from "./articles/death-spiral.mdx";
+import playingWithFirebase from "./articles/playing-with-firebase.mdx";
+import { detail as playingWithFirebaseDetail } from "./articles/playing-with-firebase.mdx";
 import artemis from "./shelf/artemis.mdx";
 import { detail as artemisDetail } from "./shelf/artemis.mdx";
 import duneSaga from "./shelf/dune-saga.mdx";
@@ -44,6 +46,10 @@ export const projectContent: Record<string, ProjectContentModule> = {
 };
 
 export const articleContent: Record<string, WritingContentModule> = {
+  "playing-with-firebase": {
+    default: playingWithFirebase,
+    detail: playingWithFirebaseDetail,
+  },
   "death-spiral": {
     default: deathSpiral,
     detail: deathSpiralDetail,

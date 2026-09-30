@@ -9,7 +9,7 @@ export type WorkItem = {
 };
 
 export type HomeListItem = {
-  type: "Book" | "Essay" | "Link" | "Placeholder";
+  type: "Book" | "Essay" | "Link";
   title: string;
   text: string;
   href: string;
@@ -30,15 +30,7 @@ const featuredArticles = getFeaturedContent(articles).map<HomeListItem>((item) =
   href: item.route,
 }));
 
-export const articleItems: HomeListItem[] = [
-  ...featuredArticles,
-  {
-    type: "Placeholder",
-    title: "Still scribbling",
-    text: "Short essays, sharper opinions, and the occasional useful detour will live here as the archive grows.",
-    href: "/articles/",
-  },
-];
+export const articleItems: HomeListItem[] = featuredArticles;
 
 export const shelfItems: HomeListItem[] = getFeaturedContent(shelf).map((item) => ({
   type: item.type,
