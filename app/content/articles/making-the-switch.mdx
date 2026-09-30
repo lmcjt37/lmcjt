@@ -1,0 +1,61 @@
+export const detail = {
+  excerpt: "How I transitioned from IDE to ADE, and what it means for my productivity.",
+};
+
+I recently moved jobs and switched from native iOS back to React Native. That meant changing environments and editors, and I can tell you I wasn't upset about leaving Xcode behind. It did mean setting up a whole new laptop, though, and making more decisions than there are milk choices at your local coffee shop.
+
+Although Xcode had its problems, with the latest updates and integrated agentic workflows it was definitely moving in the right direction. Plus, with native you get all the tools directly at your disposal: view hierarchies, Organizer, profiling and so on.
+
+I switched back to ye olde faithful VS Code, of course, as it's been the long-running standard of IDEs.
+
+So, a fresh VS Code. What do you do? Spend a week setting up your developer environment, of course. Tweaking all the config and settings till the cows come home, like overclocking your old PC to eke out as much performance as possible so it can help you do as little as possible.
+
+I hooked up all my extensions, as you do, to elevate that developer experience. I spent a couple of hours researching tools for the really important stuff, from rainbow indents to colourful brackets to Turbo Console Log. I threw my dotfiles at the machine and installed the plethora of version managers needed to keep everything happy.
+
+## Dawn of AI
+
+Next up, the new world order: agent-specific workflows. My go-to at the time (only several weeks back, but who's counting?) was installing both the Claude and Codex extensions, as I enjoyed having both chat windows available. It also let me switch when I'd maxed out a context window. If I got really desperate, there was always Copilot. I never got that desperate. Then slap on some MCP integrations and we're cooking on gas.
+
+I constantly found myself in AI channels feeling like a pauper and out of the loop, hearing things like "we need to use AI more", "here's a bunch of skills to trial" and "are you using worktrees?" I knew I needed to try something different to keep up.
+
+## Shiny stuff ✨
+
+Enter [Orca](https://www.onorca.dev/). No, not the whale. Coincidentally, I watched [Free Willy](https://www.imdb.com/title/tt0106965/) with my kids a couple of weeks ago, but this is more about freeing myself from captivity.
+
+## What is it?
+
+In Orca's own words:
+
+> Agent-first, end to end. IDEs were built for you. An ADE is built for you and your agents: worktrees, terminals, browser, and CLI in one app.
+
+ADE = Agentic Development Environment.
+
+This is what I wanted. A cockpit, somewhere with everything I need rolled up into one tidy package. Something that ticked a few more boxes and pushed me into that uncomfortable zone where I actually feel like I'm learning something new again.
+
+[Worktrees](https://git-scm.com/docs/git-worktree) are the default. Add a project, create a new worktree, get working. Created a worktree elsewhere? No worries. Toggle one setting and Orca auto-detects external worktrees, so you can see all your branches.
+
+Setup is slick: you add your primary agent, and whenever you create a new worktree an agent tab starts automatically. All you're missing is the eyes your agent needs to do its job. Oh wait, you can sort that too, by connecting a host of source control and ticket management systems.
+
+The nicest thing I've found is that you can download the app to your phone and connect over LAN to keep an eye on things anywhere on your Wi-Fi. So now I'll be brewing my coffee and ping! "Your ticket has been created. I've created a new worktree and implemented the ticket there. Do you want me to commit and push?" Erm, yes, of course. I'm still making my coffee.
+
+You can also connect via Relay to use it outside the home, but, security, innit. If you're working on a company product, your employer may not be thrilled about you sending IP over the wire to a third-party service without sign-off.
+
+## How it's changed my workflow
+
+It's enabled me to add all my active projects to the ADE, spin up a worktree per ticket, orchestrate an agent per worktree, set each one on its task, and watch them all work in parallel from my phone.
+
+The other day I had around 10 agents running at one point. That doesn't sound like a lot compared to some people I read about on social, but I still feel like I can't loosen the reins completely. Besides, humans aren't built to hold lots of context at once. Getting pulled out of flow is one of our biggest complaints, and the deep-focus work we're protecting is often something an agent can now do in a couple of hours, probably minutes.
+
+On the plus side, I'm more productive, I think. I'm definitely getting more done, in that I can be building and testing things at the same time. Right now, for example, I'm working across four repos, two of which are the frontend and backend of the same product, so I can deliver full-stack changes together, in the same context, following the same plan. It stops me stagnating between tasks, as long as there's still a workstream coming in. What's more, I'm learning a new tool and using worktrees more effectively.
+
+It's a real augmentation of my skills, and I'm letting AI into my workflows a bit more each day to find what works for me. I'm adapting my processes, and I've shifted where I think my engineering knowledge needs to be focused. I'm putting my energy into planning tickets and doing the research up front, now more than ever, so the agent has clear context. Much like you would if you set a junior on a task and didn't want to hand-hold them.
+
+I still gatekeep the output. Opus 5.5 does a helluva job right now, but it can drop the ball every so often. I'm still running my own manual tests, diff-checking the changes, and questioning the agents' choices until we agree.
+
+The negatives? Well, I'm pushing more work, and the human is clearly the bottleneck. Reviews take just as long, but there are more PRs going through. I've been burned once or twice by forgetting that files like `.env` and `node_modules` don't get copied between worktrees. My fix is a `.worktreeinclude` file listing the files I want copied into each new worktree. It's an emerging convention, supported by tools like Codex, Claude Code, and even Orca. For `node_modules`, you can set up an automation that installs dependencies whenever a new worktree or tab is created.
+
+Orca's text editor support is pretty crude, so navigation can be a pain when you're diving down a rabbit hole of imports to find the context you need. I still find myself reaching for VS Code from time to time, though I have to be careful about which branch or worktree I'm in when making changes. The setup effort wasn't a total waste after all, but as long as I keep sneaking back to VS Code, I know I'm not fully comfortable with agentic workflows yet.
+
+Overall, I'm enjoying Orca. It's helping me get the most out of my workflows, and it's free! It's probably worth a test run. No ad.
+
+Saving you a scroll: [https://www.onorca.dev](https://www.onorca.dev)

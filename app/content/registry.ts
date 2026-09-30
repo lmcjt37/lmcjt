@@ -6,6 +6,8 @@ import skills from "./projects/skills.mdx";
 import { detail as skillsDetail } from "./projects/skills.mdx";
 import theAiStorySoFar from "./articles/the-ai-story-so-far.mdx";
 import { detail as theAiStorySoFarDetail } from "./articles/the-ai-story-so-far.mdx";
+import makingTheSwitch from "./articles/making-the-switch.mdx";
+import { detail as makingTheSwitchDetail } from "./articles/making-the-switch.mdx";
 import deathSpiral from "./articles/death-spiral.mdx";
 import { detail as deathSpiralDetail } from "./articles/death-spiral.mdx";
 import playingWithFirebase from "./articles/playing-with-firebase.mdx";
@@ -46,6 +48,10 @@ export const projectContent: Record<string, ProjectContentModule> = {
 };
 
 export const articleContent: Record<string, WritingContentModule> = {
+  "making-the-switch": {
+    default: makingTheSwitch,
+    detail: makingTheSwitchDetail,
+  },
   "playing-with-firebase": {
     default: playingWithFirebase,
     detail: playingWithFirebaseDetail,
