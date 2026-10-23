@@ -99,6 +99,20 @@ export const projects = [
 export const articles = [
   {
     section: "articles",
+    slug: "the-i-in-ai",
+    title: "The I in AI",
+    description: "What does the future look like for me (us) in a world with AI in it?",
+    date: "2026-10-23",
+    route: "/articles/the-i-in-ai/",
+    listed: true,
+    featured: true,
+    type: "Essay",
+    readTime: "12 minute read",
+    chips: ["AI", "Engineering", "Opinion"],
+    socialImage: "/assets/the-i-in-ai-social.png",
+  },
+  {
+    section: "articles",
     slug: "making-the-switch",
     title: "Making the switch",
     description: "How I transitioned from IDE to ADE, and why I'm trying not to look back.",
