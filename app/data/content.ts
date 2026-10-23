@@ -42,6 +42,24 @@ export type ContentItem = ProjectItem | ArticleItem | ShelfItem;
 export const projects = [
   {
     section: "projects",
+    slug: "baton",
+    title: "Baton",
+    description:
+      "Baton by Luke Taylor: local resource orchestration for parallel React Native Maestro workflows, coordinating Metro, simulators, emulators, and ports.",
+    date: "2026-10-23",
+    route: "/projects/baton/",
+    listed: true,
+    featured: true,
+    proof:
+      "Coordinates Maestro, Metro, simulators, emulators, and ports so parallel React Native worktrees can run tests and capture evidence without resource collisions.",
+    tags: ["React Native", "Maestro", "agent tooling"],
+    glow: "rgba(198, 255, 68, 0.72)",
+    projectNumber: "01",
+    topline: "Electron / Maestro / MCP",
+    nextSlug: "coffee-dev",
+  },
+  {
+    section: "projects",
     slug: "coffee-dev",
     title: "Coffee Dev",
     description:
@@ -54,7 +72,7 @@ export const projects = [
       "Turns GitHub activity into a readable cafe simulation with authored layouts, idle loops, and product-facing progression.",
     tags: ["Next.js", "PixiJS", "simulation UX"],
     glow: "rgba(98, 213, 197, 0.78)",
-    projectNumber: "01",
+    projectNumber: "02",
     topline: "Next.js / PixiJS / simulation UX",
     nextSlug: "cosmographer",
   },
@@ -72,7 +90,7 @@ export const projects = [
       "A way to visualise a project’s domains and cross-cutting concerns by traversing code, tracing connections, and rendering the result with Cosmograph.",
     tags: ["Cosmograph", "React", "graph tooling"],
     glow: "rgba(139, 93, 255, 0.66)",
-    projectNumber: "02",
+    projectNumber: "03",
     topline: "Cosmograph / React / Vite",
     nextSlug: "skills",
   },
@@ -90,9 +108,9 @@ export const projects = [
       "A personal operating layer for AI-assisted engineering, built around repeatable commands like /dev-plan and /journal to turn recurring workflows into durable skills.",
     tags: ["AI workflows", "DX", "tooling"],
     glow: "rgba(255, 125, 85, 0.68)",
-    projectNumber: "03",
+    projectNumber: "04",
     topline: "AI workflows / DX / tooling",
-    nextSlug: "coffee-dev",
+    nextSlug: "baton",
   },
 ] satisfies ProjectItem[];
 

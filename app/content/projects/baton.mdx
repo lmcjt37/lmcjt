@@ -1,0 +1,38 @@
+export const detail = {
+  headline: "A traffic controller for parallel mobile test work.",
+  intro:
+    "Baton is an Electron app, API, CLI, and MCP integration built around Maestro workflows for React Native. It coordinates the local resources that parallel worktrees compete for, so test runs, screenshot capture, and UI comparisons do not fail simply because they land on the same machine at the same time.",
+  bullets: [
+    "Detects existing Metro instances, Maestro activity, simulators, and emulators.",
+    "Allocates ports and local test resources to worktrees, with a queue when capacity is busy.",
+    "Makes resource coordination available to people through the app and CLI, and to agents through MCP.",
+  ],
+  panels: [
+    {
+      title: "Why it matters",
+      body: "Parallel worktrees are productive until several of them each need a Metro instance, a simulator, a screenshot harness, or a Maestro run. Default port allocation and shared device state turn that into a collision problem. Baton treats those dependencies as shared infrastructure rather than incidental local state.",
+    },
+    {
+      title: "What it proves",
+      body: "Baton makes an agent-heavy mobile workflow more dependable without requiring every agent to be told how to manage the machine. The MCP interface lets an agent request what it needs; the daemon decides when and where that work can run.",
+    },
+  ],
+  bodyCards: [
+    {
+      title: "The core loop",
+      body: "A worktree requests a test environment. Baton observes what is already running, reserves an available port and device path, then releases that capacity when the task completes. If the required resource is occupied, the job waits in a queue instead of colliding with another run or giving up.",
+    },
+    {
+      title: "Built for evidence",
+      body: "The point is not just to make an E2E command pass. Baton supports the repeatable local harness needed for screenshots, visual comparisons, and several test runs at once—especially in a React Native project where agents are working in parallel.",
+    },
+  ],
+  primaryLinkLabel: "View Baton releases",
+  primaryLinkHref: "https://lmcjt37.github.io/baton-releases/",
+};
+
+<p>
+  Baton is the layer between a growing set of worktrees and the finite test infrastructure on
+  one development machine. It keeps mobile QA moving by making local capacity visible,
+  reservable, and safe to share.
+</p>
