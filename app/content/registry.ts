@@ -4,6 +4,8 @@ import cosmographer from "./projects/cosmographer.mdx";
 import { detail as cosmographerDetail } from "./projects/cosmographer.mdx";
 import skills from "./projects/skills.mdx";
 import { detail as skillsDetail } from "./projects/skills.mdx";
+import baton from "./projects/baton.mdx";
+import { detail as batonDetail } from "./projects/baton.mdx";
 import theAiStorySoFar from "./articles/the-ai-story-so-far.mdx";
 import { detail as theAiStorySoFarDetail } from "./articles/the-ai-story-so-far.mdx";
 import makingTheSwitch from "./articles/making-the-switch.mdx";
@@ -46,6 +48,10 @@ export const projectContent: Record<string, ProjectContentModule> = {
   skills: {
     default: skills,
     detail: skillsDetail,
+  },
+  baton: {
+    default: baton,
+    detail: batonDetail,
   },
 };
 
