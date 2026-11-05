@@ -1,0 +1,73 @@
+export const detail = {
+  excerpt: "How I built Baton, a small app that stops coding agents fighting over simulators.",
+};
+
+Recently, I came across an issue with my harness which was causing several agents to trip over one another when working across distinct worktrees. The main issue centred on Maestro CLI, which was integral to how my workflows operated.
+
+Generally, I hand off evidence-based work such as testing, comparison screenshots between old and new, and videos of new flows. To do this, my setup uses local E2E tooling—in this case, Maestro—to write temporary UI flows that drive screens and capture the evidence along the way.
+
+This is where the issue comes in. Start invoking this type of workflow and the agents quickly step on each other's toes, then give up as quickly as a toddler trying to draw the perfect rocket for the first time.
+
+## Ports and resources
+
+Two things cause it: port allocation and resource management. The default port is usually 3000, and without an alternative the agent will find a running instance and tell you "computer says no". If your agent is smart enough to retry, or you pre-warn it, it runs into the resource problem—or rather, your machine does. The agent doesn't care how many simulators it needs, or about stealing another agent's simulator if it's available.
+
+Each agent spins up a bundler, several simulators, a Maestro harness and a long-running workflow, plus polling tasks. Multiply that by every agent, add everything else running on my machine, and it drains CPU and memory like a parasite.
+
+## Let me introduce you to my little friend
+
+The app I am talking about is called Baton.
+
+It's a small desktop app that lets agents share resources and drive virtual devices through your apps, returning results with as little friction as possible.
+
+The first version was built around Maestro and supported iOS, Android, Expo, and the usual surrounding tooling. It's easy to install in various flavours: Homebrew, curl, or manually. Once installed, you follow the instructions on the website to add the MCP to Claude, then run another command to initialise Baton in your project. It creates a config file you can modify to suit your project's needs.
+
+## The idea 💡
+
+What I noticed was that, for repetitive work, the agent was always creating a new temporary harness that tapped into the local UI testing framework. Over and over it would create, use and discard its work, which is a huge waste of time and tokens.
+
+I started asking the agent to store some of the evidence-harness work in its global `~/.claude` directory, and added global rules so it could identify and reuse existing harnesses. It dawned on me that others were doing the same repetitive work, so I wanted to make this effort available to them.
+
+I specced out the problem for the agent and ran several grilling sessions on how best to get the work out into the world, which turned out to be a small Electron app. On top of this, I wanted to see how quickly I could do it while leaning on AI as much as possible. In the world of AI, your ideas are a little Disney: if you can dream it, you can do it.¹
+
+The caveat, of course, is that you can manage all of this yourself using the testing framework's CLI directly. You can spin up your own dedicated ports, manage the simulators, shard the tests, and so on. Why would you, when you can automate the process and remove the headache? Yes, the CLI is more cost-efficient, but it isn't time-efficient to hand-hold each worktree and agent through the process.
+
+In this automation I wanted an easy hand-off to the agent, letting it manage all instances of Metro bundler, Maestro, simulators and emulators, plus port allocation and test sharding.
+
+## What's in the box 📦
+
+Baton is a wrapper around Maestro that lets the agent use a defined API over the underlying CLI toolset. I exposed it via MCP too, because it came at no real extra implementation cost—although there is a token cost for the user. Because the wrapper is just an interface with little to no implementation detail, the app can stay agnostic to the underlying test runner.
+
+A daemon sits over all of this, handling routing, state hydration, sessions, virtual devices and queueing. It starts on login and runs headless, so agents can reach it immediately.
+
+Something that mattered to me was having a screen to visualise what the agents are doing. Independent of the daemon, you can keep everything headless or open the dashboard to see what's going on under the hood. I chucked everything into it: separation by worktree, session, retries, queue visualisation and so on. Funnily enough, I built a dashboard I hope you never need.
+
+## Now on v2
+
+We're now on v2, with better daemon management, an improved dashboard UI, and settings to manage startup. The biggest improvement is support for other runners, and this is where the agnostic wrapper paid off: it let me add Detox, focusing on React Native.
+
+## How I worked 🏗️
+
+I used one instance of Opus 5.5, at medium effort, for everything. Because I was doing my BAU alongside it, I didn't want to steal too much focus from it. Somebody out there is probably annoyed that I didn't use model routing for the various tasks from planning through to delivery. Honestly, I was looking for the shortest route, not a revolutionary setup.
+
+I start with some spec-driven development (SDD). I have my problem, I know what I want to do, and I have an opinion on how to approach it. If I don't, I research options; if I know what's out there I do this manually, otherwise I rubber duck with my agent.
+
+I plan in around six checkpoints—a habit from my local rules, which I'd mistaken for a community standard. The rule exists to stop the agent producing a wall of text and steps, though it isn't hard and fast after the initial plan. Open questions get parked against the checkpoint they belong to, so each piece of work is isolated and I can compact or restart the conversation without losing the thread. If a checkpoint feels too big, I split it into sub-tasks, mostly for my own sanity. Maybe it's not required anymore now that agents are more adept, and I likely need to loosen the reins here in an agentic world.
+
+Once the plan is defined and I'm happy it's ready for the agent, I set it off. The first three checkpoints defined the tooling, the brain and the GUI. After that, I could dogfood it: I used Baton to run test cases and capture evidence screenshots for its own PRs.
+
+Deploying Baton v1, the website and the deployment pipeline took around two weeks, and that's the honest number. That was roughly one checkpoint per day: finishing the first plan, refining a new one to fix issues I'd hit personally, then a rollout plan—again, one checkpoint at a time. The only manual steps were setting up repos, setting environment variables and pushing some buttons.
+
+## Outcome
+
+I'm still on a workstream across several worktrees, maybe ten at a time, all requiring evidence-based PRs. I use Baton daily, but I no longer invoke it; the agents know the MCP is available and use it when it's right for the task.
+
+I see agents invoking Baton in the terminal output, several simulators spin up, and workflows magically play through. I can watch via the dashboard, see what's queued next, and watch my army of robots wait patiently for their turn on the rollercoaster.
+
+I've delivered something I feel is beneficial right now; for how long, who knows. It took longer than I expected, but that was down to my own limits and the fact that life happens.
+
+The next step is integrating native runners; at that point I may have no need for React Native-specific runners. We'll see, as I want Baton to be a tool that supports mobile testing across the board.
+
+Try it: [Baton](https://lmcjt37.github.io/baton-releases/)
+
+¹ Misquoted, as it turns out. The line is commonly attributed to Walt Disney.
