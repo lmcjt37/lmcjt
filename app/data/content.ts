@@ -117,6 +117,21 @@ export const projects = [
 export const articles = [
   {
     section: "articles",
+    slug: "ai-got-you-bro",
+    title: "(A)I got you, bro",
+    description:
+      "How I built Baton, a small app that stops coding agents fighting over simulators.",
+    date: "2026-11-05",
+    route: "/articles/ai-got-you-bro/",
+    listed: true,
+    featured: true,
+    type: "Essay",
+    readTime: "7 minute read",
+    chips: ["AI", "Product", "Dev tools"],
+    socialImage: "/assets/ai-got-you-bro-social.png",
+  },
+  {
+    section: "articles",
     slug: "the-i-in-ai",
     title: "The I in AI",
     description: "What does the future look like for me (us) in a world with AI in it?",

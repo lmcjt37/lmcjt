@@ -16,6 +16,8 @@ import playingWithFirebase from "./articles/playing-with-firebase.mdx";
 import { detail as playingWithFirebaseDetail } from "./articles/playing-with-firebase.mdx";
 import theIInAi from "./articles/the-i-in-ai.mdx";
 import { detail as theIInAiDetail } from "./articles/the-i-in-ai.mdx";
+import aiGotYouBro from "./articles/ai-got-you-bro.mdx";
+import { detail as aiGotYouBroDetail } from "./articles/ai-got-you-bro.mdx";
 import artemis from "./shelf/artemis.mdx";
 import { detail as artemisDetail } from "./shelf/artemis.mdx";
 import duneSaga from "./shelf/dune-saga.mdx";
@@ -56,6 +58,10 @@ export const projectContent: Record<string, ProjectContentModule> = {
 };
 
 export const articleContent: Record<string, WritingContentModule> = {
+  "ai-got-you-bro": {
+    default: aiGotYouBro,
+    detail: aiGotYouBroDetail,
+  },
   "the-i-in-ai": {
     default: theIInAi,
     detail: theIInAiDetail,
