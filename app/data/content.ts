@@ -117,6 +117,21 @@ export const projects = [
 export const articles = [
   {
     section: "articles",
+    slug: "the-retroactive-sorry",
+    title: "The Retroactive Sorry",
+    description:
+      "I've always had the mantra that it's better to ask forgiveness than permission",
+    date: "2026-11-13",
+    route: "/articles/the-retroactive-sorry/",
+    listed: true,
+    featured: true,
+    type: "Essay",
+    readTime: "7 minute read",
+    chips: ["Opinion", "SDLC", "Engineering"],
+    socialImage: "/assets/the-retroactive-sorry-social.png",
+  },
+  {
+    section: "articles",
     slug: "ai-got-you-bro",
     title: "(A)I got you, bro",
     description:

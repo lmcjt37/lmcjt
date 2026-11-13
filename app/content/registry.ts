@@ -18,6 +18,8 @@ import theIInAi from "./articles/the-i-in-ai.mdx";
 import { detail as theIInAiDetail } from "./articles/the-i-in-ai.mdx";
 import aiGotYouBro from "./articles/ai-got-you-bro.mdx";
 import { detail as aiGotYouBroDetail } from "./articles/ai-got-you-bro.mdx";
+import theRetroactiveSorry from "./articles/the-retroactive-sorry.mdx";
+import { detail as theRetroactiveSorryDetail } from "./articles/the-retroactive-sorry.mdx";
 import artemis from "./shelf/artemis.mdx";
 import { detail as artemisDetail } from "./shelf/artemis.mdx";
 import duneSaga from "./shelf/dune-saga.mdx";
@@ -58,6 +60,10 @@ export const projectContent: Record<string, ProjectContentModule> = {
 };
 
 export const articleContent: Record<string, WritingContentModule> = {
+  "the-retroactive-sorry": {
+    default: theRetroactiveSorry,
+    detail: theRetroactiveSorryDetail,
+  },
   "ai-got-you-bro": {
     default: aiGotYouBro,
     detail: aiGotYouBroDetail,
