@@ -76,6 +76,240 @@ body.chaos {
   --acid: #32e6ff;
 }
 
+@font-face {
+  font-family: "Roux Display";
+  src: url("/assets/Pattaya-Regular.ttf") format("truetype");
+  font-display: swap;
+}
+
+.roux-page {
+  --roux-onyx: #00120b;
+  --roux-pumpkin: #e79a2f;
+  --roux-caramel: #e6aa68;
+  --roux-copper: #dd614a;
+  --roux-olive-light: #f0efd9;
+  --roux-paper: #fbf7f1;
+  --roux-card: #fff;
+  --roux-border: #e9ded1;
+  --roux-muted: #71685f;
+  background: var(--roux-paper);
+  color: var(--roux-onyx);
+  min-height: 100vh;
+}
+
+.roux-shell {
+  margin: 0 auto;
+  max-width: 48rem;
+  padding: clamp(1.5rem, 5vw, 4rem) clamp(1.25rem, 4vw, 2.5rem) 1.5rem;
+}
+
+.roux-header,
+.roux-brand,
+.roux-header nav,
+.roux-footer {
+  align-items: center;
+  display: flex;
+}
+
+.roux-header {
+  justify-content: space-between;
+}
+
+.roux-brand {
+  color: var(--roux-onyx);
+  font-family: "Roux Display", Georgia, serif;
+  font-size: 2.25rem;
+  gap: 0.5rem;
+  line-height: 1;
+}
+
+.roux-brand img {
+  height: 2.5rem;
+  object-fit: contain;
+  width: 2.5rem;
+}
+
+.roux-header nav {
+  font-size: 0.95rem;
+  font-weight: 650;
+  gap: 1rem;
+}
+
+.roux-header nav a:hover,
+.roux-footer a:hover,
+.roux-prose a:hover,
+.roux-callout a:hover {
+  color: var(--roux-pumpkin);
+}
+
+.roux-hero {
+  padding: clamp(4.5rem, 13vw, 8rem) 0 clamp(3rem, 8vw, 5rem);
+}
+
+.roux-eyebrow {
+  color: var(--roux-copper);
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  margin: 0 0 0.75rem;
+}
+
+.roux-hero h1,
+.roux-callout h2,
+.roux-feature-grid h2,
+.roux-prose h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 400;
+}
+
+.roux-hero h1 {
+  font-size: clamp(3.4rem, 10vw, 5.5rem);
+  letter-spacing: -0.06em;
+  line-height: 0.92;
+  margin: 0;
+  max-width: 10ch;
+}
+
+.roux-content {
+  padding-bottom: 4rem;
+}
+
+.roux-lede,
+.roux-prose p,
+.roux-prose li {
+  color: var(--roux-muted);
+  font-size: 1.1rem;
+  line-height: 1.65;
+}
+
+.roux-lede {
+  font-size: clamp(1.2rem, 3vw, 1.45rem);
+  margin: 0 0 2.5rem;
+  max-width: 42rem;
+}
+
+.roux-feature-grid {
+  display: grid;
+  gap: 0.75rem;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.roux-feature-grid section,
+.roux-callout,
+.roux-email {
+  background: var(--roux-card);
+  border: 1px solid var(--roux-border);
+  border-radius: 1.5rem;
+}
+
+.roux-feature-grid section {
+  min-height: 13rem;
+  padding: 1.25rem;
+}
+
+.roux-feature-grid span {
+  color: var(--roux-pumpkin);
+  font-size: 1.5rem;
+}
+
+.roux-feature-grid h2 {
+  font-size: 1.5rem;
+  line-height: 1.05;
+  margin: 2rem 0 0.75rem;
+}
+
+.roux-feature-grid p {
+  color: var(--roux-muted);
+  font-size: 0.9rem;
+  line-height: 1.45;
+  margin: 0;
+}
+
+.roux-callout {
+  background: var(--roux-olive-light);
+  margin-top: 2.5rem;
+  padding: clamp(1.5rem, 5vw, 2.5rem);
+}
+
+.roux-callout h2 {
+  font-size: clamp(2rem, 6vw, 3.25rem);
+  letter-spacing: -0.045em;
+  line-height: 0.95;
+  margin: 0;
+}
+
+.roux-callout > p:not(.roux-eyebrow) {
+  color: var(--roux-muted);
+  line-height: 1.6;
+  max-width: 35rem;
+}
+
+.roux-callout a,
+.roux-email {
+  color: var(--roux-onyx);
+  font-weight: 750;
+}
+
+.roux-email {
+  display: block;
+  font-size: clamp(1.4rem, 5vw, 2rem);
+  margin-bottom: 2.5rem;
+  padding: 1.25rem 1.5rem;
+}
+
+.roux-prose {
+  max-width: 42rem;
+}
+
+.roux-prose h2 {
+  font-size: 1.8rem;
+  margin: 2.5rem 0 0.5rem;
+}
+
+.roux-prose p,
+.roux-prose ul {
+  margin: 0;
+}
+
+.roux-prose ul {
+  padding-left: 1.4rem;
+}
+
+.roux-prose a {
+  color: var(--roux-onyx);
+  text-decoration: underline;
+  text-decoration-color: var(--roux-caramel);
+  text-underline-offset: 0.18em;
+}
+
+.roux-footer {
+  border-top: 1px solid var(--roux-border);
+  color: var(--roux-muted);
+  font-size: 0.8rem;
+  justify-content: space-between;
+  padding-top: 1.25rem;
+}
+
+@media (max-width: 38rem) {
+  .roux-feature-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .roux-feature-grid section {
+    min-height: auto;
+  }
+
+  .roux-feature-grid h2 {
+    margin-top: 1rem;
+  }
+
+  .roux-footer {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+}
+
 a {
   color: inherit;
   text-decoration: none;
