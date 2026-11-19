@@ -156,6 +156,7 @@ body.chaos {
 
 .roux-hero h1,
 .roux-callout h2,
+.roux-download h2,
 .roux-feature-grid h2,
 .roux-prose h2 {
   font-family: Georgia, "Times New Roman", serif;
@@ -192,6 +193,51 @@ body.chaos {
   display: grid;
   gap: 0.75rem;
   grid-template-columns: repeat(3, 1fr);
+}
+
+.roux-download {
+  align-items: center;
+  background: var(--roux-olive-light);
+  border: 1px solid var(--roux-border);
+  border-radius: 1.5rem;
+  display: flex;
+  gap: 1.5rem;
+  justify-content: space-between;
+  margin: 0 0 2.5rem;
+  padding: clamp(1.5rem, 5vw, 2.25rem);
+}
+
+.roux-download .roux-eyebrow {
+  margin-bottom: 0.5rem;
+}
+
+.roux-download h2 {
+  font-size: clamp(1.9rem, 5vw, 2.75rem);
+  letter-spacing: -0.045em;
+  line-height: 0.98;
+  margin: 0;
+}
+
+.roux-download p:not(.roux-eyebrow) {
+  color: var(--roux-muted);
+  line-height: 1.55;
+  margin: 0.75rem 0 0;
+  max-width: 29rem;
+}
+
+.roux-download a {
+  background: var(--roux-onyx);
+  border-radius: 999px;
+  color: white;
+  flex: none;
+  font-size: 0.95rem;
+  font-weight: 750;
+  padding: 0.9rem 1.2rem;
+  text-align: center;
+}
+
+.roux-download a:hover {
+  background: var(--roux-pumpkin);
 }
 
 .roux-feature-grid section,
@@ -293,6 +339,11 @@ body.chaos {
 @media (max-width: 38rem) {
   .roux-feature-grid {
     grid-template-columns: 1fr;
+  }
+
+  .roux-download {
+    align-items: flex-start;
+    flex-direction: column;
   }
 
   .roux-feature-grid section {

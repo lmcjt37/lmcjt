@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 
 import { RouxPage } from "./RouxPage";
 
+// Replace this with the direct App Store listing as soon as Roux is approved.
+const APP_STORE_URL = "https://apps.apple.com/gb/search?term=Roux";
+
 export const metadata: Metadata = {
   title: "Roux — Your recipes, your kitchen",
   description: "A calm, local-first home for recipes, shopping lists, and meal plans.",
@@ -14,6 +17,16 @@ export default function RouxHomePage() {
         Roux keeps your recipes, shopping list, and meal plans together — without asking you to hand
         over your data.
       </p>
+      <section className="roux-download" aria-labelledby="roux-download-heading">
+        <div>
+          <p className="roux-eyebrow">AVAILABLE FOR IOS</p>
+          <h2 id="roux-download-heading">Take Roux into the kitchen.</h2>
+          <p>Download Roux for iPhone and keep your recipes, plans, and shopping list close by.</p>
+        </div>
+        <a href={APP_STORE_URL} rel="noreferrer" target="_blank">
+          Download on the App Store
+        </a>
+      </section>
       <div className="roux-feature-grid">
         <section>
           <span aria-hidden="true">✦</span>
