@@ -117,6 +117,20 @@ export const projects = [
 export const articles = [
   {
     section: "articles",
+    slug: "following-the-herd",
+    title: "Following the herd",
+    description: "Don’t follow the logo, just use the right tool for the job.",
+    date: "2026-11-26",
+    route: "/articles/following-the-herd/",
+    listed: true,
+    featured: true,
+    type: "Essay",
+    readTime: "14 minute read",
+    chips: ["Opinion", "Engineering", "Migration"],
+    socialImage: "/assets/following-the-herd-social.png",
+  },
+  {
+    section: "articles",
     slug: "the-retroactive-sorry",
     title: "The Retroactive Sorry",
     description: "I've always had the mantra that it's better to ask forgiveness than permission",

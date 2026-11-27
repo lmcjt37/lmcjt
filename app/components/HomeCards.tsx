@@ -30,6 +30,13 @@ export function HomeItemCard({ item }: { item: HomeListItem }) {
       <span>{item.type}</span>
       <h3>{item.title}</h3>
       <p>{item.text}</p>
+      {item.tags?.length ? (
+        <div className="item-tags">
+          {item.tags.map((tag) => (
+            <span key={tag}>{tag}</span>
+          ))}
+        </div>
+      ) : null}
     </a>
   );
 }

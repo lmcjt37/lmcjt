@@ -13,6 +13,7 @@ export type HomeListItem = {
   title: string;
   text: string;
   href: string;
+  tags?: string[];
 };
 
 export const workItems: WorkItem[] = getFeaturedContent(projects).map((item) => ({
@@ -28,6 +29,7 @@ const featuredArticles = getFeaturedContent(articles).map<HomeListItem>((item) =
   title: item.title,
   text: item.description,
   href: item.route,
+  tags: item.chips,
 }));
 
 export const articleItems: HomeListItem[] = featuredArticles;

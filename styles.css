@@ -1271,6 +1271,9 @@ body.ready h1 > span:nth-child(4) {
   border-radius: 1rem;
   --trace-color: rgba(98, 213, 197, 0.92);
   isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   min-height: 16rem;
   overflow: hidden;
   padding: 1rem;
@@ -1359,6 +1362,16 @@ body.ready h1 > span:nth-child(4) {
   line-height: 1.55;
   position: relative;
   z-index: 2;
+}
+
+.item-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  justify-content: flex-end;
+  margin-top: auto;
+  padding-top: 1rem;
+  align-self: stretch;
 }
 
 .tile-link {
@@ -1770,7 +1783,7 @@ body.ready h1 > span:nth-child(4) {
   padding: 0.25rem 0;
 }
 
-.essay-body ul li {
+.essay-body li {
   color: var(--muted);
   line-height: 1.75;
   padding: 0.25rem 0;
